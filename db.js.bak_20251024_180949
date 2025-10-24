@@ -1,4 +1,4 @@
-﻿import pkg from "pg";
+﻿import pkg from 'pg';
 const { Pool } = pkg;
 
 const pool = new Pool({
@@ -7,18 +7,16 @@ const pool = new Pool({
 });
 
 export async function init() {
-  // Tabla de usuarios
-  await pool.query(`
+  await pool.query(
     CREATE TABLE IF NOT EXISTS users (
       id SERIAL PRIMARY KEY,
       username TEXT UNIQUE NOT NULL,
       password_hash TEXT NOT NULL,
       created_at TIMESTAMP DEFAULT NOW()
     );
-  `);
+  );
 
-  // Tabla de mensajes
-  await pool.query(`
+  await pool.query(
     CREATE TABLE IF NOT EXISTS messages (
       id SERIAL PRIMARY KEY,
       room TEXT,
@@ -26,9 +24,9 @@ export async function init() {
       text TEXT,
       ts BIGINT
     );
-  `);
+  );
 
-  console.log("✅ Tablas 'users' y 'messages' listas.");
+  console.log("✅ Tablas users y messages listas");
 }
 
 export { pool };
