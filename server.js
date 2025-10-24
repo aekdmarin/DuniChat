@@ -67,9 +67,12 @@ wss.on("connection", (ws, req) => {
     broadcast(ws.meta.room, payload);
 
     // guardar en DB (sin bloquear)
-    saveMessage(payload).catch(err => {
-      console.error("DB save error:", err?.message || err);
-    });
+    try {
+  await saveMessage(payload);
+  console.log(`💾 Guardado en DB: ${payload.user} -> ${payload.room} :: "${payload.text}"`);
+} catch (err) {
+  console.error("❌ Error guardando mensaje en DB:", err?.message || err);
+}
   });
 
   ws.on("close", () => {
@@ -122,3 +125,4 @@ await init();
 server.listen(PORT, () => {
   console.log(`🚀 DuniChat backend en puerto ${PORT} (WS /ws, DB ready)`);
 });
+
