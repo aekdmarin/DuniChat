@@ -1,6 +1,7 @@
 ﻿import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(const DuniChatApp());
 
@@ -26,6 +27,7 @@ class _ChatPageState extends State<ChatPage> {
   late TextEditingController _userC, _roomC, _msgC, _urlC;
   WebSocketChannel? _ch;
   final List<String> _log = [];
+  bool _loading = false;
 
   @override
   void initState() {
@@ -46,17 +48,49 @@ class _ChatPageState extends State<ChatPage> {
     super.dispose();
   }
 
-  void _connect() {
+  Future<void> _loadHistory() async {
+    final room = _roomC.text.trim().isEmpty ? "global" : _roomC.text.trim();
+    final url = Uri.parse("https://dunichat.onrender.com/history/=30");
+
+    setState(() {
+      _loading = true;
+      _log.clear();
+    });
+
+    try {
+      final res = await http.get(url);
+      if (res.statusCode == 200) {
+        final data = jsonDecode(res.body);
+        for (final msg in data.reversed) {
+          final user = msg["user"] ?? "?";
+          final text = msg["text"] ?? "";
+          _log.add("💬 [] ");
+        }
+      } else {
+        _log.add("⚠️ Error cargando historial ()");
+      }
+    } catch (e) {
+      _log.add("⚠️ Error de red: \");
+    }
+
+    setState(() {
+      _loading = false;
+    });
+  }
+
+  void _connect() async {
+    await _loadHistory(); // Cargar historial antes de conectar
     _ch?.sink.close();
     final uri = Uri.parse(_urlC.text.trim());
     _ch = WebSocketChannel.connect(uri);
-    setState(() => _log.add('🟢 Conectando a $uri ...'));
+    setState(() => _log.add("🟢 Conectado a \ ..."));
+
     _ch!.stream.listen((event) {
-      setState(() => _log.add('📩 $event'));
+      setState(() => _log.add("📩 \"));
     }, onDone: () {
-      setState(() => _log.add('🔴 Conexión cerrada'));
+      setState(() => _log.add("🔴 Conexión cerrada"));
     }, onError: (e) {
-      setState(() => _log.add('⚠️ Error: $e'));
+      setState(() => _log.add("⚠️ Error WS: \"));
     });
 
     final hello = jsonEncode({"user": _userC.text, "room": _roomC.text, "text": ""});
@@ -71,14 +105,14 @@ class _ChatPageState extends State<ChatPage> {
       "text": _msgC.text,
     });
     _ch!.sink.add(msg);
-    setState(() => _log.add('📤 ${_msgC.text}'));
+    setState(() => _log.add("📤 "));
     _msgC.clear();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('DuniChat (Flutter)')),
+      appBar: AppBar(title: const Text('DuniChat (Flutter + Historial)')),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(children: [
@@ -94,21 +128,17 @@ class _ChatPageState extends State<ChatPage> {
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black12),
-                  borderRadius: BorderRadius.circular(8)),
-              child: ListView.builder(
-                itemCount: _log.length,
-                itemBuilder: (_, i) => Text(_log[i]),
-              ),
+              decoration: BoxDecoration(border: Border.all(color: Colors.black12), borderRadius: BorderRadius.circular(8)),
+              child: _loading
+                  ? const Center(child: CircularProgressIndicator())
+                  : ListView.builder(
+                      itemCount: _log.length,
+                      itemBuilder: (_, i) => Text(_log[i]),
+                    ),
             ),
           ),
           Row(children: [
-            Expanded(
-                child: TextField(
-                    controller: _msgC,
-                    decoration: const InputDecoration(
-                        hintText: 'Escribe un mensaje...'))),
+            Expanded(child: TextField(controller: _msgC, decoration: const InputDecoration(hintText: 'Escribe un mensaje...'))),
             const SizedBox(width: 8),
             FilledButton(onPressed: _send, child: const Text('Enviar')),
           ]),
