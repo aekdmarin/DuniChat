@@ -23,10 +23,18 @@ class ChatPage extends StatefulWidget {
   State<ChatPage> createState() => _ChatPageState();
 }
 
+class Message {
+  final String user;
+  final String text;
+  final bool mine;
+  Message({required this.user, required this.text, required this.mine});
+}
+
 class _ChatPageState extends State<ChatPage> {
   late TextEditingController _userC, _roomC, _msgC, _urlC;
   WebSocketChannel? _ch;
-  final List<String> _log = [];
+  final List<Message> _messages = [];
+  final ScrollController _scrollC = ScrollController();
   bool _loading = false;
 
   @override
@@ -45,6 +53,7 @@ class _ChatPageState extends State<ChatPage> {
     _msgC.dispose();
     _urlC.dispose();
     _ch?.sink.close();
+    _scrollC.dispose();
     super.dispose();
   }
 
@@ -54,7 +63,7 @@ class _ChatPageState extends State<ChatPage> {
 
     setState(() {
       _loading = true;
-      _log.clear();
+      _messages.clear();
     });
 
     try {
@@ -64,33 +73,51 @@ class _ChatPageState extends State<ChatPage> {
         for (final msg in data.reversed) {
           final user = msg["user"] ?? "?";
           final text = msg["text"] ?? "";
-          _log.add("💬 [] ");
+          _messages.add(Message(user: user, text: text, mine: user == _userC.text));
         }
-      } else {
-        _log.add("⚠️ Error cargando historial ()");
       }
     } catch (e) {
-      _log.add("⚠️ Error de red: \");
+      _messages.add(Message(user: "⚠️", text: "Error al cargar historial: \", mine: false));
     }
 
-    setState(() {
-      _loading = false;
+    setState(() => _loading = false);
+    _scrollToEnd();
+  }
+
+  void _scrollToEnd() {
+    Future.delayed(const Duration(milliseconds: 200), () {
+      if (_scrollC.hasClients) {
+        _scrollC.jumpTo(_scrollC.position.maxScrollExtent);
+      }
     });
   }
 
   void _connect() async {
-    await _loadHistory(); // Cargar historial antes de conectar
+    await _loadHistory();
     _ch?.sink.close();
     final uri = Uri.parse(_urlC.text.trim());
     _ch = WebSocketChannel.connect(uri);
-    setState(() => _log.add("🟢 Conectado a \ ..."));
-
+    setState(() {});
     _ch!.stream.listen((event) {
-      setState(() => _log.add("📩 \"));
+      final msg = jsonDecode(event);
+      if (msg is Map && msg.containsKey("text")) {
+        setState(() {
+          _messages.add(Message(
+            user: msg["user"] ?? "?",
+            text: msg["text"] ?? "",
+            mine: msg["user"] == _userC.text,
+          ));
+        });
+        _scrollToEnd();
+      }
     }, onDone: () {
-      setState(() => _log.add("🔴 Conexión cerrada"));
+      setState(() {
+        _messages.add(Message(user: "🔴", text: "Conexión cerrada", mine: false));
+      });
     }, onError: (e) {
-      setState(() => _log.add("⚠️ Error WS: \"));
+      setState(() {
+        _messages.add(Message(user: "⚠️", text: "Error WS: \", mine: false));
+      });
     });
 
     final hello = jsonEncode({"user": _userC.text, "room": _roomC.text, "text": ""});
@@ -99,24 +126,28 @@ class _ChatPageState extends State<ChatPage> {
 
   void _send() {
     if (_ch == null) return;
+    final msgText = _msgC.text.trim();
+    if (msgText.isEmpty) return;
     final msg = jsonEncode({
       "user": _userC.text,
       "room": _roomC.text,
-      "text": _msgC.text,
+      "text": msgText,
     });
     _ch!.sink.add(msg);
-    setState(() => _log.add("📤 "));
+    setState(() {
+      _messages.add(Message(user: _userC.text, text: msgText, mine: true));
+    });
     _msgC.clear();
+    _scrollToEnd();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('DuniChat (Flutter + Historial)')),
+      appBar: AppBar(title: const Text('DuniChat 💬')),
       body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(8),
         child: Column(children: [
-          TextField(controller: _urlC, decoration: const InputDecoration(labelText: 'WS URL (wss://...)')),
           Row(children: [
             Expanded(child: TextField(controller: _userC, decoration: const InputDecoration(labelText: 'Usuario'))),
             const SizedBox(width: 8),
@@ -127,19 +158,46 @@ class _ChatPageState extends State<ChatPage> {
           const SizedBox(height: 8),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(border: Border.all(color: Colors.black12), borderRadius: BorderRadius.circular(8)),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black12),
+                borderRadius: BorderRadius.circular(10),
+              ),
               child: _loading
                   ? const Center(child: CircularProgressIndicator())
                   : ListView.builder(
-                      itemCount: _log.length,
-                      itemBuilder: (_, i) => Text(_log[i]),
+                      controller: _scrollC,
+                      itemCount: _messages.length,
+                      itemBuilder: (context, i) {
+                        final m = _messages[i];
+                        final align = m.mine ? CrossAxisAlignment.end : CrossAxisAlignment.start;
+                        final bgColor = m.mine ? Colors.blue[200] : Colors.grey[300];
+                        final txtColor = Colors.black87;
+                        return Column(
+                          crossAxisAlignment: align,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: bgColor,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Text(": ", style: TextStyle(color: txtColor)),
+                            )
+                          ],
+                        );
+                      },
                     ),
             ),
           ),
+          const SizedBox(height: 4),
           Row(children: [
-            Expanded(child: TextField(controller: _msgC, decoration: const InputDecoration(hintText: 'Escribe un mensaje...'))),
-            const SizedBox(width: 8),
+            Expanded(
+                child: TextField(
+                    controller: _msgC,
+                    decoration: const InputDecoration(
+                        hintText: 'Escribe un mensaje...', border: OutlineInputBorder()))),
+            const SizedBox(width: 6),
             FilledButton(onPressed: _send, child: const Text('Enviar')),
           ]),
         ]),
