@@ -27,7 +27,13 @@ class Message {
   final String user;
   final String text;
   final bool mine;
-  Message({required this.user, required this.text, required this.mine});
+  final DateTime ts;
+  Message({
+    required this.user,
+    required this.text,
+    required this.mine,
+    required this.ts,
+  });
 }
 
 class _ChatPageState extends State<ChatPage> {
@@ -57,9 +63,22 @@ class _ChatPageState extends State<ChatPage> {
     super.dispose();
   }
 
+  String _fmtTime(DateTime dt) =>
+      '${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}';
+
+  Color _avatarColor(String user) {
+    final palette = <Color>[
+      Colors.indigo, Colors.teal, Colors.orange, Colors.pink, Colors.blueGrey,
+      Colors.deepPurple, Colors.cyan, Colors.amber, Colors.lightBlue, Colors.green,
+    ];
+    int h = 0;
+    for (final r in user.codeUnits) { h = (h * 31 + r) & 0x7fffffff; }
+    return palette[h % palette.length];
+  }
+
   Future<void> _loadHistory() async {
     final room = _roomC.text.trim().isEmpty ? "global" : _roomC.text.trim();
-    final url = Uri.parse("https://dunichat.onrender.com/history/=30");
+    final url = Uri.parse("https://dunichat.onrender.com/history/$room?limit=30");
 
     setState(() {
       _loading = true;
@@ -71,13 +90,44 @@ class _ChatPageState extends State<ChatPage> {
       if (res.statusCode == 200) {
         final data = jsonDecode(res.body);
         for (final msg in data.reversed) {
-          final user = msg["user"] ?? "?";
-          final text = msg["text"] ?? "";
-          _messages.add(Message(user: user, text: text, mine: user == _userC.text));
+          final user = (msg["user"] ?? "?").toString();
+          final text = (msg["text"] ?? "").toString();
+          final dynamic rawTs = msg["ts"];
+DateTime ts;
+if (rawTs is num) {
+  ts = DateTime.fromMillisecondsSinceEpoch(rawTs.toInt());
+} else if (rawTs is String) {
+  final parsed = int.tryParse(rawTs);
+  if (parsed != null) {
+    ts = DateTime.fromMillisecondsSinceEpoch(parsed);
+  } else {
+    ts = DateTime.tryParse(rawTs) ?? DateTime.now();
+  }
+} else {
+  ts = DateTime.now();
+}
+          _messages.add(Message(
+            user: user,
+            text: text,
+            mine: user == _userC.text,
+            ts: ts,
+          ));
         }
+      } else {
+        _messages.add(Message(
+          user: "âš ï¸",
+          text: "Error cargando historial: ${res.statusCode}",
+          mine: false,
+          ts: DateTime.now(),
+        ));
       }
     } catch (e) {
-      _messages.add(Message(user: "⚠️", text: "Error al cargar historial: \", mine: false));
+      _messages.add(Message(
+        user: "âš ï¸",
+        text: "Error cargando historial: $e",
+        mine: false,
+        ts: DateTime.now(),
+      ));
     }
 
     setState(() => _loading = false);
@@ -85,7 +135,7 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   void _scrollToEnd() {
-    Future.delayed(const Duration(milliseconds: 200), () {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (_scrollC.hasClients) {
         _scrollC.jumpTo(_scrollC.position.maxScrollExtent);
       }
@@ -98,25 +148,65 @@ class _ChatPageState extends State<ChatPage> {
     final uri = Uri.parse(_urlC.text.trim());
     _ch = WebSocketChannel.connect(uri);
     setState(() {});
+
     _ch!.stream.listen((event) {
-      final msg = jsonDecode(event);
-      if (msg is Map && msg.containsKey("text")) {
+      try {
+        final msg = jsonDecode(event);
+        if (msg is Map && msg.containsKey("text")) {
+          final user = (msg["user"] ?? "?").toString();
+          final text = (msg["text"] ?? "").toString();
+          final dynamic rawTs = msg["ts"];
+DateTime ts;
+if (rawTs is num) {
+  ts = DateTime.fromMillisecondsSinceEpoch(rawTs.toInt());
+} else if (rawTs is String) {
+  final parsed = int.tryParse(rawTs);
+  if (parsed != null) {
+    ts = DateTime.fromMillisecondsSinceEpoch(parsed);
+  } else {
+    ts = DateTime.tryParse(rawTs) ?? DateTime.now();
+  }
+} else {
+  ts = DateTime.now();
+}
+          setState(() {
+            _messages.add(Message(
+              user: user,
+              text: text,
+              mine: user == _userC.text,
+              ts: ts,
+            ));
+          });
+          _scrollToEnd();
+        }
+      } catch (_) {
         setState(() {
           _messages.add(Message(
-            user: msg["user"] ?? "?",
-            text: msg["text"] ?? "",
-            mine: msg["user"] == _userC.text,
+            user: "?",
+            text: event.toString(),
+            mine: false,
+            ts: DateTime.now(),
           ));
         });
         _scrollToEnd();
       }
     }, onDone: () {
       setState(() {
-        _messages.add(Message(user: "🔴", text: "Conexión cerrada", mine: false));
+        _messages.add(Message(
+          user: "ðŸ”´",
+          text: "ConexiÃ³n cerrada",
+          mine: false,
+          ts: DateTime.now(),
+        ));
       });
     }, onError: (e) {
       setState(() {
-        _messages.add(Message(user: "⚠️", text: "Error WS: \", mine: false));
+        _messages.add(Message(
+          user: "âš ï¸",
+          text: "Error WS: $e",
+          mine: false,
+          ts: DateTime.now(),
+        ));
       });
     });
 
@@ -135,7 +225,12 @@ class _ChatPageState extends State<ChatPage> {
     });
     _ch!.sink.add(msg);
     setState(() {
-      _messages.add(Message(user: _userC.text, text: msgText, mine: true));
+      _messages.add(Message(
+        user: _userC.text,
+        text: msgText,
+        mine: true,
+        ts: DateTime.now(),
+      ));
     });
     _msgC.clear();
     _scrollToEnd();
@@ -144,7 +239,7 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('DuniChat 💬')),
+      appBar: AppBar(title: const Text('DuniChat ðŸ’¬')),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(children: [
@@ -169,22 +264,58 @@ class _ChatPageState extends State<ChatPage> {
                       itemCount: _messages.length,
                       itemBuilder: (context, i) {
                         final m = _messages[i];
-                        final align = m.mine ? CrossAxisAlignment.end : CrossAxisAlignment.start;
-                        final bgColor = m.mine ? Colors.blue[200] : Colors.grey[300];
-                        final txtColor = Colors.black87;
-                        return Column(
-                          crossAxisAlignment: align,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: bgColor,
-                                borderRadius: BorderRadius.circular(12),
+                        final isMine = m.mine;
+
+                        final bubble = Container(
+                          constraints: const BoxConstraints(maxWidth: 320),
+                          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                          margin: const EdgeInsets.symmetric(vertical: 4),
+                          decoration: BoxDecoration(
+                            color: isMine ? Colors.blue[200] : Colors.grey[300],
+                            borderRadius: BorderRadius.only(
+                              topLeft: const Radius.circular(12),
+                              topRight: const Radius.circular(12),
+                              bottomLeft: Radius.circular(isMine ? 12 : 0),
+                              bottomRight: Radius.circular(isMine ? 0 : 12),
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              if (!isMine)
+                                Text(m.user, style: const TextStyle(fontWeight: FontWeight.w600)),
+                              Text(m.text),
+                              const SizedBox(height: 4),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: Text(
+                                  _fmtTime(m.ts),
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    color: Colors.black.withOpacity(0.6),
+                                  ),
+                                ),
                               ),
-                              child: Text(": ", style: TextStyle(color: txtColor)),
-                            )
-                          ],
+                            ],
+                          ),
+                        );
+
+                        final avatar = CircleAvatar(
+                          radius: 16,
+                          backgroundColor: _avatarColor(m.user),
+                          child: Text(
+                            (m.user.isNotEmpty ? m.user[0].toUpperCase() : '?'),
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        );
+
+                        return Row(
+                          mainAxisAlignment:
+                              isMine ? MainAxisAlignment.end : MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: isMine
+                              ? [bubble, const SizedBox(width: 6), avatar]
+                              : [avatar, const SizedBox(width: 6), bubble],
                         );
                       },
                     ),
@@ -193,10 +324,15 @@ class _ChatPageState extends State<ChatPage> {
           const SizedBox(height: 4),
           Row(children: [
             Expanded(
-                child: TextField(
-                    controller: _msgC,
-                    decoration: const InputDecoration(
-                        hintText: 'Escribe un mensaje...', border: OutlineInputBorder()))),
+              child: TextField(
+                controller: _msgC,
+                decoration: const InputDecoration(
+                  hintText: 'Escribe un mensaje...',
+                  border: OutlineInputBorder(),
+                ),
+                onSubmitted: (_) => _send(),
+              ),
+            ),
             const SizedBox(width: 6),
             FilledButton(onPressed: _send, child: const Text('Enviar')),
           ]),
@@ -205,3 +341,4 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 }
+
