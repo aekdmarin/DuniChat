@@ -2,6 +2,7 @@
 import http from "http";
 import cors from "cors";
 import { WebSocketServer } from "ws";
+import { init, saveMessage, getHistory } from "./db.js";
 
 const app = express();
 app.use(cors());
@@ -13,40 +14,37 @@ const server = http.createServer(app);
 // WS en /ws
 const wss = new WebSocketServer({ server, path: "/ws" });
 
-// Mapa de salas a Set de sockets
+// Salas en memoria (para broadcast en vivo)
 const rooms = new Map(); // room -> Set<WebSocket>
 function roomSet(room) {
   if (!rooms.has(room)) rooms.set(room, new Set());
   return rooms.get(room);
 }
 
-// Heartbeat
+// Heartbeat para limpiar sockets muertos
 function heartbeat() { this.isAlive = true; }
 
 wss.on("connection", (ws, req) => {
   ws.isAlive = true;
   ws.on("pong", heartbeat);
 
-  // meta por conexión
   ws.meta = { user: "anon", room: "global" };
   roomSet("global").add(ws);
-  console.log("👤 Conectado:", req.socket.remoteAddress);
 
-  // notificar join
+  // anunciar join
   broadcast(ws.meta.room, {
-    sys: true, type: "join",
-    text: `${ws.meta.user} se unió a ${ws.meta.room}`, ts: Date.now()
+    sys: true, type: "join", text: `${ws.meta.user} se unió a ${ws.meta.room}`, ts: Date.now()
   });
 
-  ws.on("message", raw => {
+  ws.on("message", async raw => {
     const txt = raw.toString();
     let msg;
     try { msg = JSON.parse(txt); }
     catch { msg = { text: txt }; }
 
     // user/room opcionales
-    if (msg.user) ws.meta.user = String(msg.user).slice(0,32);
-    const targetRoom = msg.room ? String(msg.room).slice(0,32) : ws.meta.room;
+    if (msg.user) ws.meta.user = String(msg.user).slice(0, 32);
+    const targetRoom = msg.room ? String(msg.room).slice(0, 32) : ws.meta.room;
 
     // mover de sala si cambió
     if (targetRoom !== ws.meta.room) {
@@ -54,8 +52,7 @@ wss.on("connection", (ws, req) => {
       ws.meta.room = targetRoom;
       roomSet(ws.meta.room).add(ws);
       broadcast(ws.meta.room, {
-        sys: true, type: "join",
-        text: `${ws.meta.user} se unió a ${ws.meta.room}`, ts: Date.now()
+        sys: true, type: "join", text: `${ws.meta.user} se unió a ${ws.meta.room}`, ts: Date.now()
       });
     }
 
@@ -65,7 +62,14 @@ wss.on("connection", (ws, req) => {
       text: msg.text ?? "",
       ts: Date.now()
     };
+
+    // broadcast en vivo
     broadcast(ws.meta.room, payload);
+
+    // guardar en DB (sin bloquear)
+    saveMessage(payload).catch(err => {
+      console.error("DB save error:", err?.message || err);
+    });
   });
 
   ws.on("close", () => {
@@ -77,15 +81,13 @@ wss.on("connection", (ws, req) => {
   });
 });
 
-// ping periódico para cerrar muertos
+// ping periódico
 const interval = setInterval(() => {
   wss.clients.forEach(ws => {
     if (ws.isAlive === false) return ws.terminate();
-    ws.isAlive = false;
-    ws.ping();
+    ws.isAlive = false; ws.ping();
   });
 }, 30000);
-
 wss.on("close", () => clearInterval(interval));
 
 function broadcast(room, obj) {
@@ -95,10 +97,28 @@ function broadcast(room, obj) {
   }
 }
 
+// REST: raíz
 app.get("/", (req, res) => {
-  res.json({ ok: true, ws: "/ws", note: "Enviar JSON {user,text,room}" });
+  res.json({ ok: true, ws: "/ws", history: "/history/:room?limit=50&before=ts" });
 });
 
+// REST: historial por sala
+app.get("/history/:room", async (req, res) => {
+  try {
+    const room = String(req.params.room || "global");
+    const limit = Number(req.query.limit || 50);
+    const before = req.query.before ? Number(req.query.before) : null;
+    const rows = await getHistory(room, limit, before);
+    res.json(rows);
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: "history_error" });
+  }
+});
+
+// Inicialización DB + arranque
+await init();
+
 server.listen(PORT, () => {
-  console.log(`🚀 DuniChat backend en puerto ${PORT} (WS /ws)`);
+  console.log(`🚀 DuniChat backend en puerto ${PORT} (WS /ws, DB ready)`);
 });
