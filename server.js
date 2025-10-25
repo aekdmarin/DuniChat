@@ -59,6 +59,7 @@ app.get("/history", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => res.send("✅ DuniChat backend activo"));
+app.get("/", (req, res) => res.json({ "message": "✅ DuniChat backend activo" }));
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => console.log(`🌐 Servidor corriendo en puerto ${PORT}`));
+
