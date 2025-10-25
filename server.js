@@ -1,102 +1,64 @@
 ﻿import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import { init, pool } from "./db.js";
-import { WebSocketServer } from "ws";
 import http from "http";
+import { WebSocketServer } from "ws";
+import pkg from "pg";
+import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 
+const { Pool } = pkg;
 const app = express();
+app.use(express.json());
 app.use(cors());
-app.use(bodyParser.json());
 
-const JWT_SECRET = process.env.JWT_SECRET || "dunichat_secret";
-const PORT = process.env.PORT || 3000;
-
-// Inicializar base de datos
-await init();
-
-// ------------------------
-// 🔹 Registro de usuario (corregido)
-// ------------------------
-app.post("/signup", async (req, res) => {
-  try {
-    const { username, password } = req.body;
-    if (!username || !password) {
-      return res.status(400).json({ error: "Faltan datos" });
-    }
-
-    const hash = await bcrypt.hash(password, 10);
-    const queryText = `
-      INSERT INTO users (username, password_hash)
-      VALUES ($1, $2)
-      ON CONFLICT (username) DO NOTHING
-      RETURNING username;
-    `;
-
-    const result = await pool.query(queryText, [username, hash]);
-
-    if (result.rows.length === 0) {
-      console.log(`⚠️ Usuario existente: ${username}`);
-      return res.status(400).json({ error: "Usuario ya existe" });
-    }
-
-    console.log(`✅ Usuario registrado: ${username}`);
-    res.status(200).json({ message: "Usuario registrado correctamente" });
-  } catch (err) {
-    console.error("❌ Error en /signup:", err);
-    res.status(500).json({ error: "Error interno en registro" });
-  }
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
 });
 
-// ------------------------
-// 🔹 Inicio de sesión
-// ------------------------
-app.post("/login", async (req, res) => {
-  try {
-    const { username, password } = req.body;
-    if (!username || !password) {
-      return res.status(400).json({ error: "Faltan datos" });
-    }
-
-    const result = await pool.query(
-      "SELECT * FROM users WHERE username = $1",
-      [username]
-    );
-
-    if (result.rows.length === 0) {
-      return res.status(401).json({ error: "Usuario no existe" });
-    }
-
-    const user = result.rows[0];
-    const valid = await bcrypt.compare(password, user.password_hash);
-    if (!valid) {
-      return res.status(401).json({ error: "Contraseña incorrecta" });
-    }
-
-    const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: "24h" });
-    console.log(`✅ Login exitoso: ${username}`);
-    res.status(200).json({ token });
-  } catch (err) {
-    console.error("❌ Error en /login:", err);
-    res.status(500).json({ error: "Error en login" });
-  }
-});
-
-// ------------------------
-// 🔹 Servidor HTTP + WebSocket (Render-compatible)
-// ------------------------
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
+// --- WebSocket Real-Time Chat ---
 wss.on("connection", (ws) => {
-  console.log("🟢 Nueva conexión WebSocket");
-  ws.on("message", (msg) => {
-    console.log("💬 Mensaje recibido:", msg.toString());
+  ws.on("message", async (data) => {
+    try {
+      const msg = JSON.parse(data);
+      const { sender, room, text } = msg;
+
+      // Guardar en DB
+      await pool.query(
+        "INSERT INTO messages (sender, room, message) VALUES ($1, $2, $3)",
+        [sender, room, text]
+      );
+
+      // Enviar a todos los clientes del mismo room
+      wss.clients.forEach((client) => {
+        if (client.readyState === 1) {
+          client.send(JSON.stringify({ sender, text, room, timestamp: new Date() }));
+        }
+      });
+    } catch (err) {
+      console.error("❌ Error procesando mensaje:", err);
+    }
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`🚀 Servidor HTTP+WS corriendo en puerto ${PORT}`);
+// --- Endpoint para historial ---
+app.get("/history", async (req, res) => {
+  const { room } = req.query;
+  try {
+    const result = await pool.query(
+      "SELECT sender, message, timestamp FROM messages WHERE room=$1 ORDER BY timestamp ASC",
+      [room]
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error recuperando historial");
+  }
 });
+
+app.get("/", (req, res) => res.send("✅ DuniChat backend activo"));
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => console.log(`🌐 Servidor corriendo en puerto ${PORT}`));

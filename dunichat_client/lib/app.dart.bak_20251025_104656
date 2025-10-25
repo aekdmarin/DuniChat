@@ -1,0 +1,31 @@
+﻿import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'core/theme.dart';
+import 'features/auth/login_page.dart';
+import 'features/auth/signup_page.dart';
+import 'features/chat/chat_list_page.dart';
+import 'features/chat/chat_conversation_page.dart';
+
+class DuniApp extends StatelessWidget {
+  DuniApp({super.key});
+
+  final _router = GoRouter(
+    initialLocation: '/login',
+    routes: [
+      GoRoute(path: '/login', builder: (ctx, _) => const LoginPage()),
+      GoRoute(path: '/signup', builder: (ctx, _) => const SignupPage()),
+      GoRoute(path: '/chats', builder: (ctx, _) => const ChatListPage()),
+      GoRoute(path: '/chat/:room', builder: (ctx, s) => ChatConversationPage(room: s.pathParameters['room']!)),
+    ],
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      title: 'DuniChat',
+      theme: DuniTheme.lightWarm,
+      routerConfig: _router,
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}

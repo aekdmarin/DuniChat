@@ -1,15 +1,7 @@
 ﻿import 'dart:convert';
-
-import 'package:dunichat_client/features/chat/chat_conversation_page.dart';
 import 'package:flutter/material.dart';
-
-import 'package:dunichat_client/features/chat/chat_conversation_page.dart';
 import 'package:http/http.dart' as http;
-
-import 'package:dunichat_client/features/chat/chat_conversation_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:dunichat_client/features/chat/chat_conversation_page.dart';
 import 'package:dunichat_client/main.dart';     // para ir al chat
 import 'package:dunichat_client/signup.dart';   // ✅ nuevo import
 
@@ -54,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
         if (context.mounted) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (_) =>  ChatConversationPage(room: 'default')),
+            MaterialPageRoute(builder: (_) =>  ChatPage()),
           );
         }
       } else {
@@ -154,5 +146,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-

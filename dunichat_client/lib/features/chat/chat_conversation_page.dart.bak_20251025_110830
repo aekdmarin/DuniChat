@@ -1,0 +1,110 @@
+﻿import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:dunichat_client/ui/widgets/glass_card.dart';
+import 'package:dunichat_client/ui/widgets/message_bubble.dart';
+import 'package:dunichat_client/ui/widgets/composer_bar.dart';
+
+class ChatConversationPage extends StatefulWidget {
+  final String room;
+  const ChatConversationPage({super.key, required this.room});
+
+  @override
+  State<ChatConversationPage> createState() => _ChatConversationPageState();
+}
+
+class _ChatConversationPageState extends State<ChatConversationPage> {
+  final List<Map<String, dynamic>> _messages = [
+    {'text': '👋 ¡Bienvenido a DuniChat!', 'isMine': false, 'time': DateTime.now()},
+    {'text': 'Este es un mensaje de ejemplo local.', 'isMine': true, 'time': DateTime.now()},
+  ];
+
+  void _handleSend(String text) {
+    setState(() {
+      _messages.add({'text': text, 'isMine': true, 'time': DateTime.now()});
+    });
+
+    // Simular respuesta automática
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _messages.add({
+          'text': 'Echo: $text',
+          'isMine': false,
+          'time': DateTime.now(),
+        });
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final Color crema = const Color(0xFFFFF0E4);
+    final Color durazno = const Color(0xFFFFD4B5);
+    final Color primario = const Color(0xFFFF8746);
+
+    return Scaffold(
+      backgroundColor: crema,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'DuniChat - ${widget.room}',
+          style: const TextStyle(
+            color: Color(0xFF6B3A28),
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+            colors: [crema, durazno.withOpacity(0.3)],
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 6.0),
+                  child: ListView.builder(
+                    reverse: true,
+                    itemCount: _messages.length,
+                    itemBuilder: (context, index) {
+                      final msg = _messages[_messages.length - 1 - index];
+                      return MessageBubble(
+                        text: msg['text'],
+                        isMine: msg['isMine'],
+                        timestamp: msg['time'],
+                      );
+                    },
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.3),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.05),
+                      blurRadius: 8,
+                      offset: const Offset(0, -2),
+                    )
+                  ],
+                ),
+                child: ComposerBar(onSend: _handleSend),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

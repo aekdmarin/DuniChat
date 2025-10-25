@@ -1,0 +1,4158 @@
+﻿# ============================================================
+# CONTEXTO DEL PROYECTO: DuniChat
+# Generado automáticamente desde PowerShell
+# Fecha: 2025-10-25 10:17:24
+# ============================================================
+
+proyecto:
+  nombre: "DuniChat"
+  ruta_local: "C:\DuniChat"
+  descripcion: >
+    Este archivo fue generado automáticamente y contiene la
+    estructura de carpetas y archivos del proyecto DuniChat.
+    Está diseñado para que ChatGPT pueda interpretarlo y continuar
+    el desarrollo de la aplicación desde este punto exacto.
+
+estructura:
+  - carpeta: DuniChat
+    archivos:
+      - .env.example
+      - .gitignore
+      - contexto_dunichat.yaml
+      - db.js
+      - db.js.bak_20251024_180949
+      - estructura_dunichat.txt
+      - iniciar_dunichat.ps1
+      - package-lock.json
+      - package.json
+      - render.yaml
+      - server.js
+    - carpeta: dunichat_client
+      archivos:
+        - .flutter-plugins-dependencies
+        - .gitignore
+        - .metadata
+        - analysis_options.yaml
+        - dunichat_client.iml
+        - pubspec.lock
+        - pubspec.yaml
+        - README.md
+      - carpeta: .dart_tool
+        archivos:
+          - package_config.json
+          - package_graph.json
+          - version
+        - carpeta: dartpad
+          archivos:
+            - web_plugin_registrant.dart
+        - carpeta: flutter_build
+          archivos:
+            - dart_plugin_registrant.dart
+          - carpeta: 49d5d058278a6d909adbf170dccfb3de
+            archivos:
+              - .filecache
+              - app.dill
+              - dart_build.d
+              - dart_build.stamp
+              - dart_build_result.json
+              - debug_android_application.stamp
+              - flutter_assets.d
+              - gen_dart_plugin_registrant.stamp
+              - gen_localizations.stamp
+              - install_code_assets.d
+              - install_code_assets.stamp
+              - kernel_snapshot_program.d
+              - native_assets.json
+              - outputs.json
+      - carpeta: .idea
+        archivos:
+          - modules.xml
+          - workspace.xml
+        - carpeta: libraries
+          archivos:
+            - Dart_SDK.xml
+            - KotlinJavaRuntime.xml
+        - carpeta: runConfigurations
+          archivos:
+            - main_dart.xml
+      - carpeta: android
+        archivos:
+          - .gitignore
+          - build.gradle.kts
+          - dunichat_client_android.iml
+          - gradle.properties
+          - gradlew
+          - gradlew.bat
+          - local.properties
+          - settings.gradle.kts
+        - carpeta: .gradle
+          archivos:
+            - file-system.probe
+          - carpeta: 8.12
+            archivos:
+              - gc.properties
+            - carpeta: checksums
+              archivos:
+                - checksums.lock
+                - md5-checksums.bin
+                - sha1-checksums.bin
+            - carpeta: executionHistory
+              archivos:
+                - executionHistory.bin
+                - executionHistory.lock
+            - carpeta: expanded
+            - carpeta: fileChanges
+              archivos:
+                - last-build.bin
+            - carpeta: fileHashes
+              archivos:
+                - fileHashes.bin
+                - fileHashes.lock
+                - resourceHashesCache.bin
+            - carpeta: vcsMetadata
+          - carpeta: buildOutputCleanup
+            archivos:
+              - buildOutputCleanup.lock
+              - cache.properties
+              - outputFiles.bin
+          - carpeta: noVersion
+            archivos:
+              - buildLogic.lock
+          - carpeta: vcs-1
+            archivos:
+              - gc.properties
+        - carpeta: .kotlin
+          - carpeta: sessions
+        - carpeta: app
+          archivos:
+            - build.gradle.kts
+          - carpeta: src
+            - carpeta: debug
+              archivos:
+                - AndroidManifest.xml
+            - carpeta: main
+              archivos:
+                - AndroidManifest.xml
+              - carpeta: java
+                - carpeta: io
+                  - carpeta: flutter
+                    - carpeta: plugins
+                      archivos:
+                        - GeneratedPluginRegistrant.java
+              - carpeta: kotlin
+                - carpeta: com
+                  - carpeta: example
+                    - carpeta: dunichat_client
+                      archivos:
+                        - MainActivity.kt
+              - carpeta: res
+                - carpeta: drawable
+                  archivos:
+                    - launch_background.xml
+                - carpeta: drawable-v21
+                  archivos:
+                    - launch_background.xml
+                - carpeta: mipmap-hdpi
+                  archivos:
+                    - ic_launcher.png
+                - carpeta: mipmap-mdpi
+                  archivos:
+                    - ic_launcher.png
+                - carpeta: mipmap-xhdpi
+                  archivos:
+                    - ic_launcher.png
+                - carpeta: mipmap-xxhdpi
+                  archivos:
+                    - ic_launcher.png
+                - carpeta: mipmap-xxxhdpi
+                  archivos:
+                    - ic_launcher.png
+                - carpeta: values
+                  archivos:
+                    - styles.xml
+                - carpeta: values-night
+                  archivos:
+                    - styles.xml
+            - carpeta: profile
+              archivos:
+                - AndroidManifest.xml
+        - carpeta: gradle
+          - carpeta: wrapper
+            archivos:
+              - gradle-wrapper.jar
+              - gradle-wrapper.properties
+      - carpeta: build
+        archivos:
+          - f61019181a390ebae04f980d79c3991a.cache.dill.track.dill
+        - carpeta: .cxx
+          - carpeta: debug
+            - carpeta: 381f1i3m
+              archivos:
+                - hash_key.txt
+              - carpeta: arm64-v8a
+                archivos:
+                  - additional_project_files.txt
+                  - android_gradle_build.json
+                  - android_gradle_build_mini.json
+                  - build.ninja
+                  - build_file_index.txt
+                  - CMakeCache.txt
+                  - cmake_install.cmake
+                  - configure_fingerprint.bin
+                  - metadata_generation_command.txt
+                  - prefab_config.json
+                  - symbol_folder_index.txt
+                - carpeta: .cmake
+                  - carpeta: api
+                    - carpeta: v1
+                      - carpeta: query
+                        - carpeta: client-agp
+                          archivos:
+                            - cache-v2
+                            - cmakeFiles-v1
+                            - codemodel-v2
+                      - carpeta: reply
+                        archivos:
+                          - cache-v2-c9184eda4b8f88a9398f.json
+                          - cmakeFiles-v1-6a0b52aa2e9026bd42e5.json
+                          - codemodel-v2-cc7b1fac242723a23d2a.json
+                          - directory-.-debug-d0094a50bb2071803777.json
+                          - index-2025-10-24T22-56-04-0778.json
+                - carpeta: CMakeFiles
+                  archivos:
+                    - cmake.check_cache
+                    - CMakeOutput.log
+                    - rules.ninja
+                    - TargetDirectories.txt
+                  - carpeta: 3.22.1-g37088a8-dirty
+                    archivos:
+                      - CMakeCCompiler.cmake
+                      - CMakeCXXCompiler.cmake
+                      - CMakeDetermineCompilerABI_C.bin
+                      - CMakeDetermineCompilerABI_CXX.bin
+                      - CMakeSystem.cmake
+                    - carpeta: CompilerIdC
+                      archivos:
+                        - CMakeCCompilerId.c
+                        - CMakeCCompilerId.o
+                      - carpeta: tmp
+                    - carpeta: CompilerIdCXX
+                      archivos:
+                        - CMakeCXXCompilerId.cpp
+                        - CMakeCXXCompilerId.o
+                      - carpeta: tmp
+                  - carpeta: CMakeTmp
+              - carpeta: armeabi-v7a
+                archivos:
+                  - additional_project_files.txt
+                  - android_gradle_build.json
+                  - android_gradle_build_mini.json
+                  - build.ninja
+                  - build_file_index.txt
+                  - CMakeCache.txt
+                  - cmake_install.cmake
+                  - configure_fingerprint.bin
+                  - metadata_generation_command.txt
+                  - prefab_config.json
+                  - symbol_folder_index.txt
+                - carpeta: .cmake
+                  - carpeta: api
+                    - carpeta: v1
+                      - carpeta: query
+                        - carpeta: client-agp
+                          archivos:
+                            - cache-v2
+                            - cmakeFiles-v1
+                            - codemodel-v2
+                      - carpeta: reply
+                        archivos:
+                          - cache-v2-b423bddde2210c0bdd32.json
+                          - cmakeFiles-v1-a91af8c5220cde4d4762.json
+                          - codemodel-v2-8b646571c753e62ff01b.json
+                          - directory-.-debug-d0094a50bb2071803777.json
+                          - index-2025-10-24T22-56-24-0339.json
+                - carpeta: CMakeFiles
+                  archivos:
+                    - cmake.check_cache
+                    - CMakeOutput.log
+                    - rules.ninja
+                    - TargetDirectories.txt
+                  - carpeta: 3.22.1-g37088a8-dirty
+                    archivos:
+                      - CMakeCCompiler.cmake
+                      - CMakeCXXCompiler.cmake
+                      - CMakeDetermineCompilerABI_C.bin
+                      - CMakeDetermineCompilerABI_CXX.bin
+                      - CMakeSystem.cmake
+                    - carpeta: CompilerIdC
+                      archivos:
+                        - CMakeCCompilerId.c
+                        - CMakeCCompilerId.o
+                      - carpeta: tmp
+                    - carpeta: CompilerIdCXX
+                      archivos:
+                        - CMakeCXXCompilerId.cpp
+                        - CMakeCXXCompilerId.o
+                      - carpeta: tmp
+                  - carpeta: CMakeTmp
+              - carpeta: x86_64
+                archivos:
+                  - additional_project_files.txt
+                  - android_gradle_build.json
+                  - android_gradle_build_mini.json
+                  - build.ninja
+                  - build_file_index.txt
+                  - CMakeCache.txt
+                  - cmake_install.cmake
+                  - configure_fingerprint.bin
+                  - metadata_generation_command.txt
+                  - prefab_config.json
+                  - symbol_folder_index.txt
+                - carpeta: .cmake
+                  - carpeta: api
+                    - carpeta: v1
+                      - carpeta: query
+                        - carpeta: client-agp
+                          archivos:
+                            - cache-v2
+                            - cmakeFiles-v1
+                            - codemodel-v2
+                      - carpeta: reply
+                        archivos:
+                          - cache-v2-e5f583a314b552341958.json
+                          - cmakeFiles-v1-97cb80b4a21571fca20a.json
+                          - codemodel-v2-0e9f679a33207125b270.json
+                          - directory-.-debug-d0094a50bb2071803777.json
+                          - index-2025-10-24T22-56-27-0745.json
+                - carpeta: CMakeFiles
+                  archivos:
+                    - cmake.check_cache
+                    - CMakeOutput.log
+                    - rules.ninja
+                    - TargetDirectories.txt
+                  - carpeta: 3.22.1-g37088a8-dirty
+                    archivos:
+                      - CMakeCCompiler.cmake
+                      - CMakeCXXCompiler.cmake
+                      - CMakeDetermineCompilerABI_C.bin
+                      - CMakeDetermineCompilerABI_CXX.bin
+                      - CMakeSystem.cmake
+                    - carpeta: CompilerIdC
+                      archivos:
+                        - CMakeCCompilerId.c
+                        - CMakeCCompilerId.o
+                      - carpeta: tmp
+                    - carpeta: CompilerIdCXX
+                      archivos:
+                        - CMakeCXXCompilerId.cpp
+                        - CMakeCXXCompilerId.o
+                      - carpeta: tmp
+                  - carpeta: CMakeTmp
+        - carpeta: app
+          - carpeta: generated
+            - carpeta: ap_generated_sources
+              - carpeta: debug
+                - carpeta: out
+            - carpeta: res
+              - carpeta: pngs
+                - carpeta: debug
+              - carpeta: resValues
+                - carpeta: debug
+          - carpeta: intermediates
+            - carpeta: aar_metadata_check
+              - carpeta: debug
+                - carpeta: checkDebugAarMetadata
+            - carpeta: annotation_processor_list
+              - carpeta: debug
+                - carpeta: javaPreCompileDebug
+                  archivos:
+                    - annotationProcessors.json
+            - carpeta: apk_ide_redirect_file
+              - carpeta: debug
+                - carpeta: createDebugApkListingFileRedirect
+                  archivos:
+                    - redirect.txt
+            - carpeta: app_metadata
+              - carpeta: debug
+                - carpeta: writeDebugAppMetadata
+                  archivos:
+                    - app-metadata.properties
+            - carpeta: assets
+              - carpeta: debug
+                - carpeta: mergeDebugAssets
+                  - carpeta: flutter_assets
+                    archivos:
+                      - AssetManifest.bin
+                      - AssetManifest.json
+                      - FontManifest.json
+                      - isolate_snapshot_data
+                      - kernel_blob.bin
+                      - NativeAssetsManifest.json
+                      - NOTICES.Z
+                      - vm_snapshot_data
+                    - carpeta: fonts
+                      archivos:
+                        - MaterialIcons-Regular.otf
+                    - carpeta: packages
+                      - carpeta: cupertino_icons
+                        - carpeta: assets
+                          archivos:
+                            - CupertinoIcons.ttf
+                    - carpeta: shaders
+                      archivos:
+                        - ink_sparkle.frag
+            - carpeta: compatible_screen_manifest
+              - carpeta: debug
+                - carpeta: createDebugCompatibleScreenManifests
+                  archivos:
+                    - output-metadata.json
+            - carpeta: compile_and_runtime_not_namespaced_r_class_jar
+              - carpeta: debug
+                - carpeta: processDebugResources
+                  archivos:
+                    - R.jar
+            - carpeta: compressed_assets
+              - carpeta: debug
+                - carpeta: compressDebugAssets
+                  - carpeta: out
+                    - carpeta: assets
+                      - carpeta: flutter_assets
+                        archivos:
+                          - AssetManifest.bin.jar
+                          - AssetManifest.json.jar
+                          - FontManifest.json.jar
+                          - isolate_snapshot_data.jar
+                          - kernel_blob.bin.jar
+                          - NativeAssetsManifest.json.jar
+                          - NOTICES.Z.jar
+                          - vm_snapshot_data.jar
+                        - carpeta: fonts
+                          archivos:
+                            - MaterialIcons-Regular.otf.jar
+                        - carpeta: packages
+                          - carpeta: cupertino_icons
+                            - carpeta: assets
+                              archivos:
+                                - CupertinoIcons.ttf.jar
+                        - carpeta: shaders
+                          archivos:
+                            - ink_sparkle.frag.jar
+            - carpeta: cxx
+              - carpeta: debug
+                - carpeta: 381f1i3m
+                  - carpeta: logs
+                    - carpeta: arm64-v8a
+                      archivos:
+                        - build_model.json
+                        - configure_command.bat
+                        - configure_stderr.txt
+                        - configure_stdout.txt
+                        - generate_cxx_metadata_2044_timing.txt
+                        - metadata_generation_record.json
+                    - carpeta: armeabi-v7a
+                      archivos:
+                        - build_model.json
+                        - configure_command.bat
+                        - configure_stderr.txt
+                        - configure_stdout.txt
+                        - generate_cxx_metadata_2042_timing.txt
+                        - metadata_generation_record.json
+                    - carpeta: x86_64
+                      archivos:
+                        - build_model.json
+                        - configure_command.bat
+                        - configure_stderr.txt
+                        - configure_stdout.txt
+                        - generate_cxx_metadata_2048_timing.txt
+                        - metadata_generation_record.json
+                  - carpeta: obj
+                    - carpeta: arm64-v8a
+                    - carpeta: armeabi-v7a
+                    - carpeta: x86_64
+            - carpeta: data_binding_layout_info_type_merge
+              - carpeta: debug
+                - carpeta: mergeDebugResources
+                  - carpeta: out
+            - carpeta: data_binding_layout_info_type_package
+              - carpeta: debug
+                - carpeta: packageDebugResources
+                  - carpeta: out
+            - carpeta: desugar_graph
+              - carpeta: debug
+                - carpeta: dexBuilderDebug
+                  - carpeta: out
+                    - carpeta: currentProject
+                      - carpeta: dirs_bucket_0
+                        archivos:
+                          - graph.bin
+                      - carpeta: dirs_bucket_1
+                        archivos:
+                          - graph.bin
+                      - carpeta: dirs_bucket_2
+                        archivos:
+                          - graph.bin
+                      - carpeta: dirs_bucket_3
+                        archivos:
+                          - graph.bin
+                      - carpeta: jar_c2300c1488d60f49d7bb3a428f154592cf1e73cb90df448c2a125a988ed5a29b_bucket_0
+                        archivos:
+                          - graph.bin
+                      - carpeta: jar_c2300c1488d60f49d7bb3a428f154592cf1e73cb90df448c2a125a988ed5a29b_bucket_1
+                        archivos:
+                          - graph.bin
+                      - carpeta: jar_c2300c1488d60f49d7bb3a428f154592cf1e73cb90df448c2a125a988ed5a29b_bucket_2
+                        archivos:
+                          - graph.bin
+                      - carpeta: jar_c2300c1488d60f49d7bb3a428f154592cf1e73cb90df448c2a125a988ed5a29b_bucket_3
+                        archivos:
+                          - graph.bin
+                    - carpeta: externalLibs
+                    - carpeta: mixedScopes
+                    - carpeta: otherProjects
+            - carpeta: dex
+              - carpeta: debug
+                - carpeta: mergeExtDexDebug
+                  archivos:
+                    - classes.dex
+                - carpeta: mergeLibDexDebug
+                  - carpeta: 0
+                  - carpeta: 1
+                  - carpeta: 10
+                  - carpeta: 11
+                  - carpeta: 12
+                  - carpeta: 13
+                  - carpeta: 14
+                  - carpeta: 15
+                  - carpeta: 2
+                  - carpeta: 3
+                  - carpeta: 4
+                  - carpeta: 5
+                    archivos:
+                      - classes.dex
+                  - carpeta: 6
+                  - carpeta: 7
+                  - carpeta: 8
+                  - carpeta: 9
+                - carpeta: mergeProjectDexDebug
+                  - carpeta: 0
+                    archivos:
+                      - classes.dex
+                  - carpeta: 1
+                    archivos:
+                      - classes.dex
+                  - carpeta: 10
+                  - carpeta: 11
+                  - carpeta: 12
+                  - carpeta: 13
+                  - carpeta: 14
+                  - carpeta: 15
+                  - carpeta: 2
+                  - carpeta: 3
+                  - carpeta: 4
+                  - carpeta: 5
+                  - carpeta: 6
+                  - carpeta: 7
+                  - carpeta: 8
+                  - carpeta: 9
+            - carpeta: dex_archive_input_jar_hashes
+              - carpeta: debug
+                - carpeta: dexBuilderDebug
+                  archivos:
+                    - out
+            - carpeta: dex_number_of_buckets_file
+              - carpeta: debug
+                - carpeta: dexBuilderDebug
+                  archivos:
+                    - out
+            - carpeta: duplicate_classes_check
+              - carpeta: debug
+                - carpeta: checkDebugDuplicateClasses
+            - carpeta: external_file_lib_dex_archives
+              - carpeta: debug
+                - carpeta: desugarDebugFileDependencies
+            - carpeta: external_libs_dex_archive
+              - carpeta: debug
+                - carpeta: dexBuilderDebug
+                  - carpeta: out
+            - carpeta: external_libs_dex_archive_with_artifact_transforms
+              - carpeta: debug
+                - carpeta: dexBuilderDebug
+                  - carpeta: out
+            - carpeta: flutter
+              - carpeta: debug
+                archivos:
+                  - .last_build_id
+                  - flutter_build.d
+                  - libs.jar
+                - carpeta: flutter_assets
+                  archivos:
+                    - AssetManifest.bin
+                    - AssetManifest.json
+                    - FontManifest.json
+                    - isolate_snapshot_data
+                    - kernel_blob.bin
+                    - NativeAssetsManifest.json
+                    - NOTICES.Z
+                    - vm_snapshot_data
+                  - carpeta: fonts
+                    archivos:
+                      - MaterialIcons-Regular.otf
+                  - carpeta: packages
+                    - carpeta: cupertino_icons
+                      - carpeta: assets
+                        archivos:
+                          - CupertinoIcons.ttf
+                  - carpeta: shaders
+                    archivos:
+                      - ink_sparkle.frag
+            - carpeta: incremental
+              - carpeta: debug
+                - carpeta: mergeDebugResources
+                  archivos:
+                    - compile-file-map.properties
+                    - merger.xml
+                  - carpeta: merged.dir
+                    - carpeta: values
+                      archivos:
+                        - values.xml
+                    - carpeta: values-af
+                      archivos:
+                        - values-af.xml
+                    - carpeta: values-am
+                      archivos:
+                        - values-am.xml
+                    - carpeta: values-ar
+                      archivos:
+                        - values-ar.xml
+                    - carpeta: values-as
+                      archivos:
+                        - values-as.xml
+                    - carpeta: values-az
+                      archivos:
+                        - values-az.xml
+                    - carpeta: values-b+sr+Latn
+                      archivos:
+                        - values-b+sr+Latn.xml
+                    - carpeta: values-be
+                      archivos:
+                        - values-be.xml
+                    - carpeta: values-bg
+                      archivos:
+                        - values-bg.xml
+                    - carpeta: values-bn
+                      archivos:
+                        - values-bn.xml
+                    - carpeta: values-bs
+                      archivos:
+                        - values-bs.xml
+                    - carpeta: values-ca
+                      archivos:
+                        - values-ca.xml
+                    - carpeta: values-cs
+                      archivos:
+                        - values-cs.xml
+                    - carpeta: values-da
+                      archivos:
+                        - values-da.xml
+                    - carpeta: values-de
+                      archivos:
+                        - values-de.xml
+                    - carpeta: values-el
+                      archivos:
+                        - values-el.xml
+                    - carpeta: values-en-rAU
+                      archivos:
+                        - values-en-rAU.xml
+                    - carpeta: values-en-rCA
+                      archivos:
+                        - values-en-rCA.xml
+                    - carpeta: values-en-rGB
+                      archivos:
+                        - values-en-rGB.xml
+                    - carpeta: values-en-rIN
+                      archivos:
+                        - values-en-rIN.xml
+                    - carpeta: values-en-rXC
+                      archivos:
+                        - values-en-rXC.xml
+                    - carpeta: values-es
+                      archivos:
+                        - values-es.xml
+                    - carpeta: values-es-rUS
+                      archivos:
+                        - values-es-rUS.xml
+                    - carpeta: values-et
+                      archivos:
+                        - values-et.xml
+                    - carpeta: values-eu
+                      archivos:
+                        - values-eu.xml
+                    - carpeta: values-fa
+                      archivos:
+                        - values-fa.xml
+                    - carpeta: values-fi
+                      archivos:
+                        - values-fi.xml
+                    - carpeta: values-fr
+                      archivos:
+                        - values-fr.xml
+                    - carpeta: values-fr-rCA
+                      archivos:
+                        - values-fr-rCA.xml
+                    - carpeta: values-gl
+                      archivos:
+                        - values-gl.xml
+                    - carpeta: values-gu
+                      archivos:
+                        - values-gu.xml
+                    - carpeta: values-h720dp-v13
+                      archivos:
+                        - values-h720dp-v13.xml
+                    - carpeta: values-hdpi-v4
+                      archivos:
+                        - values-hdpi-v4.xml
+                    - carpeta: values-hi
+                      archivos:
+                        - values-hi.xml
+                    - carpeta: values-hr
+                      archivos:
+                        - values-hr.xml
+                    - carpeta: values-hu
+                      archivos:
+                        - values-hu.xml
+                    - carpeta: values-hy
+                      archivos:
+                        - values-hy.xml
+                    - carpeta: values-in
+                      archivos:
+                        - values-in.xml
+                    - carpeta: values-is
+                      archivos:
+                        - values-is.xml
+                    - carpeta: values-it
+                      archivos:
+                        - values-it.xml
+                    - carpeta: values-iw
+                      archivos:
+                        - values-iw.xml
+                    - carpeta: values-ja
+                      archivos:
+                        - values-ja.xml
+                    - carpeta: values-ka
+                      archivos:
+                        - values-ka.xml
+                    - carpeta: values-kk
+                      archivos:
+                        - values-kk.xml
+                    - carpeta: values-km
+                      archivos:
+                        - values-km.xml
+                    - carpeta: values-kn
+                      archivos:
+                        - values-kn.xml
+                    - carpeta: values-ko
+                      archivos:
+                        - values-ko.xml
+                    - carpeta: values-ky
+                      archivos:
+                        - values-ky.xml
+                    - carpeta: values-land
+                      archivos:
+                        - values-land.xml
+                    - carpeta: values-large-v4
+                      archivos:
+                        - values-large-v4.xml
+                    - carpeta: values-ldltr-v21
+                      archivos:
+                        - values-ldltr-v21.xml
+                    - carpeta: values-lo
+                      archivos:
+                        - values-lo.xml
+                    - carpeta: values-lt
+                      archivos:
+                        - values-lt.xml
+                    - carpeta: values-lv
+                      archivos:
+                        - values-lv.xml
+                    - carpeta: values-mk
+                      archivos:
+                        - values-mk.xml
+                    - carpeta: values-ml
+                      archivos:
+                        - values-ml.xml
+                    - carpeta: values-mn
+                      archivos:
+                        - values-mn.xml
+                    - carpeta: values-mr
+                      archivos:
+                        - values-mr.xml
+                    - carpeta: values-ms
+                      archivos:
+                        - values-ms.xml
+                    - carpeta: values-my
+                      archivos:
+                        - values-my.xml
+                    - carpeta: values-nb
+                      archivos:
+                        - values-nb.xml
+                    - carpeta: values-ne
+                      archivos:
+                        - values-ne.xml
+                    - carpeta: values-night-v8
+                      archivos:
+                        - values-night-v8.xml
+                    - carpeta: values-nl
+                      archivos:
+                        - values-nl.xml
+                    - carpeta: values-or
+                      archivos:
+                        - values-or.xml
+                    - carpeta: values-pa
+                      archivos:
+                        - values-pa.xml
+                    - carpeta: values-pl
+                      archivos:
+                        - values-pl.xml
+                    - carpeta: values-port
+                      archivos:
+                        - values-port.xml
+                    - carpeta: values-pt
+                      archivos:
+                        - values-pt.xml
+                    - carpeta: values-pt-rBR
+                      archivos:
+                        - values-pt-rBR.xml
+                    - carpeta: values-pt-rPT
+                      archivos:
+                        - values-pt-rPT.xml
+                    - carpeta: values-ro
+                      archivos:
+                        - values-ro.xml
+                    - carpeta: values-ru
+                      archivos:
+                        - values-ru.xml
+                    - carpeta: values-si
+                      archivos:
+                        - values-si.xml
+                    - carpeta: values-sk
+                      archivos:
+                        - values-sk.xml
+                    - carpeta: values-sl
+                      archivos:
+                        - values-sl.xml
+                    - carpeta: values-sq
+                      archivos:
+                        - values-sq.xml
+                    - carpeta: values-sr
+                      archivos:
+                        - values-sr.xml
+                    - carpeta: values-sv
+                      archivos:
+                        - values-sv.xml
+                    - carpeta: values-sw
+                      archivos:
+                        - values-sw.xml
+                    - carpeta: values-sw360dp-v13
+                      archivos:
+                        - values-sw360dp-v13.xml
+                    - carpeta: values-sw600dp-v13
+                      archivos:
+                        - values-sw600dp-v13.xml
+                    - carpeta: values-ta
+                      archivos:
+                        - values-ta.xml
+                    - carpeta: values-te
+                      archivos:
+                        - values-te.xml
+                    - carpeta: values-th
+                      archivos:
+                        - values-th.xml
+                    - carpeta: values-tl
+                      archivos:
+                        - values-tl.xml
+                    - carpeta: values-tr
+                      archivos:
+                        - values-tr.xml
+                    - carpeta: values-uk
+                      archivos:
+                        - values-uk.xml
+                    - carpeta: values-ur
+                      archivos:
+                        - values-ur.xml
+                    - carpeta: values-uz
+                      archivos:
+                        - values-uz.xml
+                    - carpeta: values-v16
+                      archivos:
+                        - values-v16.xml
+                    - carpeta: values-v17
+                      archivos:
+                        - values-v17.xml
+                    - carpeta: values-v18
+                      archivos:
+                        - values-v18.xml
+                    - carpeta: values-v21
+                      archivos:
+                        - values-v21.xml
+                    - carpeta: values-v22
+                      archivos:
+                        - values-v22.xml
+                    - carpeta: values-v23
+                      archivos:
+                        - values-v23.xml
+                    - carpeta: values-v24
+                      archivos:
+                        - values-v24.xml
+                    - carpeta: values-v25
+                      archivos:
+                        - values-v25.xml
+                    - carpeta: values-v26
+                      archivos:
+                        - values-v26.xml
+                    - carpeta: values-v28
+                      archivos:
+                        - values-v28.xml
+                    - carpeta: values-vi
+                      archivos:
+                        - values-vi.xml
+                    - carpeta: values-watch-v20
+                      archivos:
+                        - values-watch-v20.xml
+                    - carpeta: values-watch-v21
+                      archivos:
+                        - values-watch-v21.xml
+                    - carpeta: values-xlarge-v4
+                      archivos:
+                        - values-xlarge-v4.xml
+                    - carpeta: values-zh-rCN
+                      archivos:
+                        - values-zh-rCN.xml
+                    - carpeta: values-zh-rHK
+                      archivos:
+                        - values-zh-rHK.xml
+                    - carpeta: values-zh-rTW
+                      archivos:
+                        - values-zh-rTW.xml
+                    - carpeta: values-zu
+                      archivos:
+                        - values-zu.xml
+                  - carpeta: stripped.dir
+                - carpeta: packageDebugResources
+                  archivos:
+                    - compile-file-map.properties
+                    - merger.xml
+                  - carpeta: merged.dir
+                    - carpeta: values
+                      archivos:
+                        - values.xml
+                    - carpeta: values-night-v8
+                      archivos:
+                        - values-night-v8.xml
+                  - carpeta: stripped.dir
+              - carpeta: debug-mergeJavaRes
+                archivos:
+                  - merge-state
+                - carpeta: zip-cache
+                  archivos:
+                    - 0HaK_YkMFr6xB_X3XRth7LbxJ8g=
+                    - 1n8mp+s1Tatp1_jEqw+ezR+z_GA=
+                    - 27GqsE3KFkc02GY64shFWRI6zbE=
+                    - 2cHneRBKB8XHToErFbHNGKZFe2Q=
+                    - 3bKwyoEHTfYcprKni7Q2XbtxKLU=
+                    - 3kNwAa2ZwZ1gIZLRGa6JsZweFBo=
+                    - 4OJS3aTzm+BSphLRBlwf_W6ND_M=
+                    - 5wT2x18VgCJabIrSP7zLtR7vK+0=
+                    - 6mAdb4sLNHgcBWp7GuXunUC06XI=
+                    - 7iAPq0rTTHRRrCzNgCOcjWEprjk=
+                    - 9fwGuxDW2QcggnNemSXI4dFm4vg=
+                    - a06Qy6QNpgrdPbxkv3SemIGRTVo=
+                    - bATVv0gVu72zUKsjMAaZ8CQbdl8=
+                    - Be7UfB3YRU6E8VpLoyyUOysmkaI=
+                    - BMQvKFRw7w1Ire1a777Sf+qLgp8=
+                    - bVhgyfavo8eGDpe0afZuUx3o4og=
+                    - Bvp1coLg_5Ihdw9C63llsgkVl6U=
+                    - CNbbFpOQrCRmVDZJCYVE+gcY_VA=
+                    - cWAERaxGbHKae1jlUuErXgvPSRs=
+                    - D0VtYIWgFpw5pSMMkey7zc97Wg8=
+                    - ERFrYYQZ6XxwISuRR6xm6drnY6M=
+                    - ett4rV7ZPbafOS4IoZ8IBXW8pWA=
+                    - f4YVlt43QGbxfoxJk56ZfnMYVVg=
+                    - FdCYDWlTWGf8u7A7xYN8Q7VbAbI=
+                    - fuRwIIpk_FgWgZUUC38tf_JPIwY=
+                    - fyICm_grqPCGpT6DkNyszFMtHY8=
+                    - g2j3RCvELl6Sgr9yyNyCQgcHRF0=
+                    - GX0NUtD+fUYxsGBZt16PwksTuq8=
+                    - Gz52HGIjy1U9Wi6teOtzmxOUSjI=
+                    - HsFOwMXB8K0p3fQ9qxbR7tMwEzM=
+                    - I1vLx3M7kOTwwBxgTTLYwVmwsOA=
+                    - i6eu8NdEROsGbFWa5KkYZLLgTQU=
+                    - iaKSt44Ib7keKkxfzqPADNWevCg=
+                    - iKwFTw8z4TWJ8VN7acQlARtFDLY=
+                    - IpHTJMtnF3hKpLb43SWR_adVWQ0=
+                    - ivFBax7n9qzRfpGqJua2umIiQvw=
+                    - JC7LHSJpP7YfSbxR3VqaoNdi6Pw=
+                    - jW8qEZh9LB1q044W6v4cT_RGC+U=
+                    - Ldv5nGzjPyWx8w7GaJ8uhVBTXLA=
+                    - liO5uQil_J0ftIiPBd_bp7em25Q=
+                    - M98n9xnewSk6hUyK8OR9Jsjqo2o=
+                    - MqaDQQsfFXVDqPXeZB3x5y2cijw=
+                    - mSf7XWyULFGjo7+NFjKU4H3apkE=
+                    - MZm7AVWE3Z4LEmhOOnsylxlsS9U=
+                    - NpkxfNPLtGuaSVkBgBG2o7zfD7E=
+                    - ojH20SNBDWQo3AZHkUzqSsVeYiE=
+                    - PLNPeZoPLLPMHVJE1SfrsohQB1s=
+                    - pV2ItxeKxOiXRbZWx57OdiebRWM=
+                    - pVBbOMNJjQOD1yY6nBcS_rW8LO4=
+                    - q6QcVTaDPP_rS666djjax9VrXsc=
+                    - q7+WQruhKrKP0Q2jh+UZ344MIIM=
+                    - qc5nm4MXP4q7CESwgD8C0uDH4pk=
+                    - Qi9a4VFkdAAQRhbevhLKCeHbigg=
+                    - qWqE6jRGwGjJye_gm1iNS78iAcE=
+                    - rxrp53Nr6ZGPK4Tet1gOYQUVfjY=
+                    - Rxse+_It2bZuY9iu0ydyt5dkOlQ=
+                    - sBny1pLABoGrDLODQ523BnbUwDM=
+                    - SKV1hfisCXk9L8V+G0phgdx9gqs=
+                    - T0uAM6SiS1LB4L7b95rLpfvzb3s=
+                    - TNdUXZIVOjhQP648JNMjOCTWvc8=
+                    - TsCX1KHQy_h64Leag58+ET96pDc=
+                    - U3gzeynNC73CcX8FDrBaEdfNkM8=
+                    - UpEzfcXnPF0+Q8Mskojl7s0267U=
+                    - uusudMianT9itkMfdFkovqYI1Vw=
+                    - VKHcCm6yaeGL_qIgkGO0g2m4yR0=
+                    - VPUWN90VqDAzVcwUcVhgyyIyQh0=
+                    - WeLHfCu9M1M3ObckGj+smdqonPE=
+                    - WgkD9pofQAP78gdtSww_FheqcW8=
+                    - xi15xin47AyVEut_AIxE7514LV8=
+                    - xjOREozJ4J8bxsWVBTe+zXpjxTU=
+                    - XsOI6oI98ZPjEz+1TXJ_JmkdX0Q=
+                    - xuFkS_eOU0mnpsc+R7d3gb2NK9I=
+                    - xwTPBSpsE6oLa7WQieY+32Rg4mU=
+                    - YLfmNbM6TrppUEAWa61tCXUP1Yo=
+                    - zrHygn9ZABkpdxy_7eav3FQuDjY=
+                    - _BYTAMMbdWEA_oPDJPvk7Vlpk1s=
+              - carpeta: mergeDebugAssets
+                archivos:
+                  - merger.xml
+              - carpeta: mergeDebugJniLibFolders
+                archivos:
+                  - merger.xml
+              - carpeta: mergeDebugShaders
+                archivos:
+                  - merger.xml
+              - carpeta: packageDebug
+                - carpeta: tmp
+                  - carpeta: debug
+                    archivos:
+                      - dex-renamer-state.txt
+                    - carpeta: zip-cache
+                      archivos:
+                        - androidResources
+                        - javaResources0
+            - carpeta: javac
+              - carpeta: debug
+                - carpeta: compileDebugJavaWithJavac
+                  - carpeta: classes
+                    - carpeta: io
+                      - carpeta: flutter
+                        - carpeta: plugins
+                          archivos:
+                            - GeneratedPluginRegistrant.class
+            - carpeta: java_res
+              - carpeta: debug
+                - carpeta: processDebugJavaRes
+                  - carpeta: out
+                    - carpeta: com
+                      - carpeta: example
+                        - carpeta: dunichat_client
+                    - carpeta: META-INF
+                      archivos:
+                        - app_debug.kotlin_module
+            - carpeta: linked_resources_binary_format
+              - carpeta: debug
+                - carpeta: processDebugResources
+                  archivos:
+                    - linked-resources-binary-format-debug.ap_
+                    - output-metadata.json
+            - carpeta: local_only_symbol_list
+              - carpeta: debug
+                - carpeta: parseDebugLocalResources
+                  archivos:
+                    - R-def.txt
+            - carpeta: manifest_merge_blame_file
+              - carpeta: debug
+                - carpeta: processDebugMainManifest
+                  archivos:
+                    - manifest-merger-blame-debug-report.txt
+            - carpeta: merged_java_res
+              - carpeta: debug
+                - carpeta: mergeDebugJavaResource
+                  archivos:
+                    - base.jar
+            - carpeta: merged_jni_libs
+              - carpeta: debug
+                - carpeta: mergeDebugJniLibFolders
+                  - carpeta: out
+            - carpeta: merged_manifest
+              - carpeta: debug
+                - carpeta: processDebugMainManifest
+                  archivos:
+                    - AndroidManifest.xml
+            - carpeta: merged_manifests
+              - carpeta: debug
+                - carpeta: processDebugManifest
+                  archivos:
+                    - AndroidManifest.xml
+                    - output-metadata.json
+            - carpeta: merged_native_libs
+              - carpeta: debug
+                - carpeta: mergeDebugNativeLibs
+                  - carpeta: out
+                    - carpeta: lib
+                      - carpeta: arm64-v8a
+                        archivos:
+                          - libdatastore_shared_counter.so
+                          - libflutter.so
+                          - libVkLayer_khronos_validation.so
+                      - carpeta: armeabi-v7a
+                        archivos:
+                          - libdatastore_shared_counter.so
+                      - carpeta: x86
+                        archivos:
+                          - libdatastore_shared_counter.so
+                      - carpeta: x86_64
+                        archivos:
+                          - libdatastore_shared_counter.so
+            - carpeta: merged_res
+              - carpeta: debug
+                - carpeta: mergeDebugResources
+                  archivos:
+                    - drawable-v21_launch_background.xml.flat
+                    - mipmap-hdpi_ic_launcher.png.flat
+                    - mipmap-mdpi_ic_launcher.png.flat
+                    - mipmap-xhdpi_ic_launcher.png.flat
+                    - mipmap-xxhdpi_ic_launcher.png.flat
+                    - mipmap-xxxhdpi_ic_launcher.png.flat
+                    - values-af_values-af.arsc.flat
+                    - values-am_values-am.arsc.flat
+                    - values-ar_values-ar.arsc.flat
+                    - values-as_values-as.arsc.flat
+                    - values-az_values-az.arsc.flat
+                    - values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+                    - values-be_values-be.arsc.flat
+                    - values-bg_values-bg.arsc.flat
+                    - values-bn_values-bn.arsc.flat
+                    - values-bs_values-bs.arsc.flat
+                    - values-ca_values-ca.arsc.flat
+                    - values-cs_values-cs.arsc.flat
+                    - values-da_values-da.arsc.flat
+                    - values-de_values-de.arsc.flat
+                    - values-el_values-el.arsc.flat
+                    - values-en-rAU_values-en-rAU.arsc.flat
+                    - values-en-rCA_values-en-rCA.arsc.flat
+                    - values-en-rGB_values-en-rGB.arsc.flat
+                    - values-en-rIN_values-en-rIN.arsc.flat
+                    - values-en-rXC_values-en-rXC.arsc.flat
+                    - values-es-rUS_values-es-rUS.arsc.flat
+                    - values-es_values-es.arsc.flat
+                    - values-et_values-et.arsc.flat
+                    - values-eu_values-eu.arsc.flat
+                    - values-fa_values-fa.arsc.flat
+                    - values-fi_values-fi.arsc.flat
+                    - values-fr-rCA_values-fr-rCA.arsc.flat
+                    - values-fr_values-fr.arsc.flat
+                    - values-gl_values-gl.arsc.flat
+                    - values-gu_values-gu.arsc.flat
+                    - values-h720dp-v13_values-h720dp-v13.arsc.flat
+                    - values-hdpi-v4_values-hdpi-v4.arsc.flat
+                    - values-hi_values-hi.arsc.flat
+                    - values-hr_values-hr.arsc.flat
+                    - values-hu_values-hu.arsc.flat
+                    - values-hy_values-hy.arsc.flat
+                    - values-in_values-in.arsc.flat
+                    - values-is_values-is.arsc.flat
+                    - values-it_values-it.arsc.flat
+                    - values-iw_values-iw.arsc.flat
+                    - values-ja_values-ja.arsc.flat
+                    - values-ka_values-ka.arsc.flat
+                    - values-kk_values-kk.arsc.flat
+                    - values-km_values-km.arsc.flat
+                    - values-kn_values-kn.arsc.flat
+                    - values-ko_values-ko.arsc.flat
+                    - values-ky_values-ky.arsc.flat
+                    - values-land_values-land.arsc.flat
+                    - values-large-v4_values-large-v4.arsc.flat
+                    - values-ldltr-v21_values-ldltr-v21.arsc.flat
+                    - values-lo_values-lo.arsc.flat
+                    - values-lt_values-lt.arsc.flat
+                    - values-lv_values-lv.arsc.flat
+                    - values-mk_values-mk.arsc.flat
+                    - values-ml_values-ml.arsc.flat
+                    - values-mn_values-mn.arsc.flat
+                    - values-mr_values-mr.arsc.flat
+                    - values-ms_values-ms.arsc.flat
+                    - values-my_values-my.arsc.flat
+                    - values-nb_values-nb.arsc.flat
+                    - values-ne_values-ne.arsc.flat
+                    - values-night-v8_values-night-v8.arsc.flat
+                    - values-nl_values-nl.arsc.flat
+                    - values-or_values-or.arsc.flat
+                    - values-pa_values-pa.arsc.flat
+                    - values-pl_values-pl.arsc.flat
+                    - values-port_values-port.arsc.flat
+                    - values-pt-rBR_values-pt-rBR.arsc.flat
+                    - values-pt-rPT_values-pt-rPT.arsc.flat
+                    - values-pt_values-pt.arsc.flat
+                    - values-ro_values-ro.arsc.flat
+                    - values-ru_values-ru.arsc.flat
+                    - values-si_values-si.arsc.flat
+                    - values-sk_values-sk.arsc.flat
+                    - values-sl_values-sl.arsc.flat
+                    - values-sq_values-sq.arsc.flat
+                    - values-sr_values-sr.arsc.flat
+                    - values-sv_values-sv.arsc.flat
+                    - values-sw360dp-v13_values-sw360dp-v13.arsc.flat
+                    - values-sw600dp-v13_values-sw600dp-v13.arsc.flat
+                    - values-sw_values-sw.arsc.flat
+                    - values-ta_values-ta.arsc.flat
+                    - values-te_values-te.arsc.flat
+                    - values-th_values-th.arsc.flat
+                    - values-tl_values-tl.arsc.flat
+                    - values-tr_values-tr.arsc.flat
+                    - values-uk_values-uk.arsc.flat
+                    - values-ur_values-ur.arsc.flat
+                    - values-uz_values-uz.arsc.flat
+                    - values-v16_values-v16.arsc.flat
+                    - values-v17_values-v17.arsc.flat
+                    - values-v18_values-v18.arsc.flat
+                    - values-v21_values-v21.arsc.flat
+                    - values-v22_values-v22.arsc.flat
+                    - values-v23_values-v23.arsc.flat
+                    - values-v24_values-v24.arsc.flat
+                    - values-v25_values-v25.arsc.flat
+                    - values-v26_values-v26.arsc.flat
+                    - values-v28_values-v28.arsc.flat
+                    - values-vi_values-vi.arsc.flat
+                    - values-watch-v20_values-watch-v20.arsc.flat
+                    - values-watch-v21_values-watch-v21.arsc.flat
+                    - values-xlarge-v4_values-xlarge-v4.arsc.flat
+                    - values-zh-rCN_values-zh-rCN.arsc.flat
+                    - values-zh-rHK_values-zh-rHK.arsc.flat
+                    - values-zh-rTW_values-zh-rTW.arsc.flat
+                    - values-zu_values-zu.arsc.flat
+                    - values_values.arsc.flat
+            - carpeta: merged_res_blame_folder
+              - carpeta: debug
+                - carpeta: mergeDebugResources
+                  - carpeta: out
+                    - carpeta: multi-v2
+                      archivos:
+                        - mergeDebugResources.json
+                        - values-af.json
+                        - values-am.json
+                        - values-ar.json
+                        - values-as.json
+                        - values-az.json
+                        - values-b+sr+Latn.json
+                        - values-be.json
+                        - values-bg.json
+                        - values-bn.json
+                        - values-bs.json
+                        - values-ca.json
+                        - values-cs.json
+                        - values-da.json
+                        - values-de.json
+                        - values-el.json
+                        - values-en-rAU.json
+                        - values-en-rCA.json
+                        - values-en-rGB.json
+                        - values-en-rIN.json
+                        - values-en-rXC.json
+                        - values-es-rUS.json
+                        - values-es.json
+                        - values-et.json
+                        - values-eu.json
+                        - values-fa.json
+                        - values-fi.json
+                        - values-fr-rCA.json
+                        - values-fr.json
+                        - values-gl.json
+                        - values-gu.json
+                        - values-h720dp-v13.json
+                        - values-hdpi-v4.json
+                        - values-hi.json
+                        - values-hr.json
+                        - values-hu.json
+                        - values-hy.json
+                        - values-in.json
+                        - values-is.json
+                        - values-it.json
+                        - values-iw.json
+                        - values-ja.json
+                        - values-ka.json
+                        - values-kk.json
+                        - values-km.json
+                        - values-kn.json
+                        - values-ko.json
+                        - values-ky.json
+                        - values-land.json
+                        - values-large-v4.json
+                        - values-ldltr-v21.json
+                        - values-lo.json
+                        - values-lt.json
+                        - values-lv.json
+                        - values-mk.json
+                        - values-ml.json
+                        - values-mn.json
+                        - values-mr.json
+                        - values-ms.json
+                        - values-my.json
+                        - values-nb.json
+                        - values-ne.json
+                        - values-night-v8.json
+                        - values-nl.json
+                        - values-or.json
+                        - values-pa.json
+                        - values-pl.json
+                        - values-port.json
+                        - values-pt-rBR.json
+                        - values-pt-rPT.json
+                        - values-pt.json
+                        - values-ro.json
+                        - values-ru.json
+                        - values-si.json
+                        - values-sk.json
+                        - values-sl.json
+                        - values-sq.json
+                        - values-sr.json
+                        - values-sv.json
+                        - values-sw.json
+                        - values-sw360dp-v13.json
+                        - values-sw600dp-v13.json
+                        - values-ta.json
+                        - values-te.json
+                        - values-th.json
+                        - values-tl.json
+                        - values-tr.json
+                        - values-uk.json
+                        - values-ur.json
+                        - values-uz.json
+                        - values-v16.json
+                        - values-v17.json
+                        - values-v18.json
+                        - values-v21.json
+                        - values-v22.json
+                        - values-v23.json
+                        - values-v24.json
+                        - values-v25.json
+                        - values-v26.json
+                        - values-v28.json
+                        - values-vi.json
+                        - values-watch-v20.json
+                        - values-watch-v21.json
+                        - values-xlarge-v4.json
+                        - values-zh-rCN.json
+                        - values-zh-rHK.json
+                        - values-zh-rTW.json
+                        - values-zu.json
+                        - values.json
+                    - carpeta: single
+                      archivos:
+                        - mergeDebugResources.json
+            - carpeta: merged_shaders
+              - carpeta: debug
+                - carpeta: mergeDebugShaders
+                  - carpeta: out
+            - carpeta: merged_test_only_native_libs
+              - carpeta: debug
+                - carpeta: mergeDebugNativeLibs
+                  - carpeta: out
+            - carpeta: mixed_scope_dex_archive
+              - carpeta: debug
+                - carpeta: dexBuilderDebug
+                  - carpeta: out
+            - carpeta: navigation_json
+              - carpeta: debug
+                - carpeta: extractDeepLinksDebug
+                  archivos:
+                    - navigation.json
+            - carpeta: nested_resources_validation_report
+              - carpeta: debug
+                - carpeta: generateDebugResources
+                  archivos:
+                    - nestedResourcesValidationReport.txt
+            - carpeta: packaged_manifests
+              - carpeta: debug
+                - carpeta: processDebugManifestForPackage
+                  archivos:
+                    - AndroidManifest.xml
+                    - output-metadata.json
+            - carpeta: packaged_res
+              - carpeta: debug
+                - carpeta: packageDebugResources
+                  - carpeta: drawable-v21
+                    archivos:
+                      - launch_background.xml
+                  - carpeta: mipmap-hdpi-v4
+                    archivos:
+                      - ic_launcher.png
+                  - carpeta: mipmap-mdpi-v4
+                    archivos:
+                      - ic_launcher.png
+                  - carpeta: mipmap-xhdpi-v4
+                    archivos:
+                      - ic_launcher.png
+                  - carpeta: mipmap-xxhdpi-v4
+                    archivos:
+                      - ic_launcher.png
+                  - carpeta: mipmap-xxxhdpi-v4
+                    archivos:
+                      - ic_launcher.png
+                  - carpeta: values
+                    archivos:
+                      - values.xml
+                  - carpeta: values-night-v8
+                    archivos:
+                      - values-night-v8.xml
+            - carpeta: project_dex_archive
+              - carpeta: debug
+                - carpeta: dexBuilderDebug
+                  - carpeta: out
+                    archivos:
+                      - 933292f8ddc30b1aae97192f3c4991f6d40761b48dc365d658f6382fadb07308_0.jar
+                      - 933292f8ddc30b1aae97192f3c4991f6d40761b48dc365d658f6382fadb07308_1.jar
+                      - 933292f8ddc30b1aae97192f3c4991f6d40761b48dc365d658f6382fadb07308_2.jar
+                      - 933292f8ddc30b1aae97192f3c4991f6d40761b48dc365d658f6382fadb07308_3.jar
+                    - carpeta: com
+                      - carpeta: example
+                        - carpeta: dunichat_client
+                          archivos:
+                            - MainActivity.dex
+                    - carpeta: io
+                      - carpeta: flutter
+                        - carpeta: plugins
+                          archivos:
+                            - GeneratedPluginRegistrant.dex
+            - carpeta: runtime_symbol_list
+              - carpeta: debug
+                - carpeta: processDebugResources
+                  archivos:
+                    - R.txt
+            - carpeta: signing_config_versions
+              - carpeta: debug
+                - carpeta: writeDebugSigningConfigVersions
+                  archivos:
+                    - signing-config-versions.json
+            - carpeta: source_set_path_map
+              - carpeta: debug
+                - carpeta: mapDebugSourceSetPaths
+                  archivos:
+                    - file-map.txt
+            - carpeta: stable_resource_ids_file
+              - carpeta: debug
+                - carpeta: processDebugResources
+                  archivos:
+                    - stableIds.txt
+            - carpeta: stripped_native_libs
+              - carpeta: debug
+                - carpeta: stripDebugDebugSymbols
+                  - carpeta: out
+                    - carpeta: lib
+                      - carpeta: arm64-v8a
+                        archivos:
+                          - libdatastore_shared_counter.so
+                          - libflutter.so
+                          - libVkLayer_khronos_validation.so
+                      - carpeta: armeabi-v7a
+                        archivos:
+                          - libdatastore_shared_counter.so
+                      - carpeta: x86
+                        archivos:
+                          - libdatastore_shared_counter.so
+                      - carpeta: x86_64
+                        archivos:
+                          - libdatastore_shared_counter.so
+            - carpeta: sub_project_dex_archive
+              - carpeta: debug
+                - carpeta: dexBuilderDebug
+                  - carpeta: out
+            - carpeta: symbol_list_with_package_name
+              - carpeta: debug
+                - carpeta: processDebugResources
+                  archivos:
+                    - package-aware-r.txt
+            - carpeta: validate_signing_config
+              - carpeta: debug
+                - carpeta: validateSigningDebug
+          - carpeta: kotlin
+            - carpeta: compileDebugKotlin
+              - carpeta: cacheable
+                archivos:
+                  - last-build.bin
+                - carpeta: caches-jvm
+                  - carpeta: inputs
+                    archivos:
+                      - source-to-output.tab
+                      - source-to-output.tab.keystream
+                      - source-to-output.tab.keystream.len
+                      - source-to-output.tab.len
+                      - source-to-output.tab.values.at
+                      - source-to-output.tab_i
+                      - source-to-output.tab_i.len
+                  - carpeta: jvm
+                    - carpeta: kotlin
+                      archivos:
+                        - class-attributes.tab
+                        - class-attributes.tab.keystream
+                        - class-attributes.tab.keystream.len
+                        - class-attributes.tab.len
+                        - class-attributes.tab.values.at
+                        - class-attributes.tab_i
+                        - class-attributes.tab_i.len
+                        - class-fq-name-to-source.tab
+                        - class-fq-name-to-source.tab.keystream
+                        - class-fq-name-to-source.tab.keystream.len
+                        - class-fq-name-to-source.tab.len
+                        - class-fq-name-to-source.tab.values.at
+                        - class-fq-name-to-source.tab_i
+                        - class-fq-name-to-source.tab_i.len
+                        - internal-name-to-source.tab
+                        - internal-name-to-source.tab.keystream
+                        - internal-name-to-source.tab.keystream.len
+                        - internal-name-to-source.tab.len
+                        - internal-name-to-source.tab.values.at
+                        - internal-name-to-source.tab_i
+                        - internal-name-to-source.tab_i.len
+                        - proto.tab
+                        - proto.tab.keystream
+                        - proto.tab.keystream.len
+                        - proto.tab.len
+                        - proto.tab.values.at
+                        - proto.tab_i
+                        - proto.tab_i.len
+                        - source-to-classes.tab
+                        - source-to-classes.tab.keystream
+                        - source-to-classes.tab.keystream.len
+                        - source-to-classes.tab.len
+                        - source-to-classes.tab.values.at
+                        - source-to-classes.tab_i
+                        - source-to-classes.tab_i.len
+                        - subtypes.tab
+                        - subtypes.tab.keystream
+                        - subtypes.tab.keystream.len
+                        - subtypes.tab.len
+                        - subtypes.tab.values.at
+                        - subtypes.tab_i
+                        - subtypes.tab_i.len
+                        - supertypes.tab
+                        - supertypes.tab.keystream
+                        - supertypes.tab.keystream.len
+                        - supertypes.tab.len
+                        - supertypes.tab.values.at
+                        - supertypes.tab_i
+                        - supertypes.tab_i.len
+                  - carpeta: lookups
+                    archivos:
+                      - counters.tab
+                      - file-to-id.tab
+                      - file-to-id.tab.keystream
+                      - file-to-id.tab.keystream.len
+                      - file-to-id.tab.len
+                      - file-to-id.tab.values.at
+                      - file-to-id.tab_i
+                      - file-to-id.tab_i.len
+                      - id-to-file.tab
+                      - id-to-file.tab.keystream
+                      - id-to-file.tab.keystream.len
+                      - id-to-file.tab.len
+                      - id-to-file.tab.values.at
+                      - id-to-file.tab_i.len
+                      - lookups.tab
+                      - lookups.tab.keystream
+                      - lookups.tab.keystream.len
+                      - lookups.tab.len
+                      - lookups.tab.values.at
+                      - lookups.tab_i
+                      - lookups.tab_i.len
+              - carpeta: classpath-snapshot
+                archivos:
+                  - shrunk-classpath-snapshot.bin
+              - carpeta: local-state
+                archivos:
+                  - build-history.bin
+          - carpeta: outputs
+            - carpeta: apk
+              - carpeta: debug
+                archivos:
+                  - app-debug.apk
+                  - output-metadata.json
+            - carpeta: flutter-apk
+              archivos:
+                - app-debug.apk
+                - app-debug.apk.sha1
+            - carpeta: logs
+              archivos:
+                - manifest-merger-debug-report.txt
+          - carpeta: tmp
+            - carpeta: compileDebugJavaWithJavac
+              archivos:
+                - previous-compilation-data.bin
+            - carpeta: kotlin-classes
+              - carpeta: debug
+                - carpeta: com
+                  - carpeta: example
+                    - carpeta: dunichat_client
+                      archivos:
+                        - MainActivity.class
+                - carpeta: META-INF
+                  archivos:
+                    - app_debug.kotlin_module
+            - carpeta: packJniLibsflutterBuildDebug
+              archivos:
+                - MANIFEST.MF
+        - carpeta: b297285db19b3f931239498f40634cec
+          archivos:
+            - gen_dart_plugin_registrant.stamp
+            - gen_localizations.stamp
+            - _composite.stamp
+        - carpeta: native_assets
+          - carpeta: android
+        - carpeta: reports
+          - carpeta: problems
+            archivos:
+              - problems-report.html
+        - carpeta: shared_preferences_android
+          - carpeta: .transforms
+            - carpeta: 01779f44c241bcba73e56eb6d8536a8c
+              archivos:
+                - results.bin
+              - carpeta: transformed
+                - carpeta: bundleLibRuntimeToDirDebug
+                  archivos:
+                    - desugar_graph.bin
+                  - carpeta: io
+                    - carpeta: flutter
+                      - carpeta: plugins
+                        - carpeta: sharedpreferences
+                          archivos:
+                            - LegacySharedPreferencesPlugin$ListEncoder.dex
+                            - LegacySharedPreferencesPlugin.dex
+                            - ListEncoder.dex
+                            - Messages$FlutterError.dex
+                            - Messages$PigeonCodec.dex
+                            - Messages$SharedPreferencesApi.dex
+                            - Messages.dex
+                            - MessagesAsyncPigeonCodec.dex
+                            - MessagesAsync_gKt.dex
+                            - SharedPreferencesAsyncApi$Companion.dex
+                            - SharedPreferencesAsyncApi.dex
+                            - SharedPreferencesBackend.dex
+                            - SharedPreferencesError.dex
+                            - SharedPreferencesListEncoder.dex
+                            - SharedPreferencesPigeonOptions$Companion.dex
+                            - SharedPreferencesPigeonOptions.dex
+                            - SharedPreferencesPlugin$clear$1$1.dex
+                            - SharedPreferencesPlugin$clear$1.dex
+                            - SharedPreferencesPlugin$dataStoreSetString$2.dex
+                            - SharedPreferencesPlugin$getAll$1.dex
+                            - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1$2$1.dex
+                            - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1$2.dex
+                            - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1.dex
+                            - SharedPreferencesPlugin$getBool$1.dex
+                            - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1$2$1.dex
+                            - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1$2.dex
+                            - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1.dex
+                            - SharedPreferencesPlugin$getDouble$1.dex
+                            - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1$2$1.dex
+                            - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1$2.dex
+                            - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1.dex
+                            - SharedPreferencesPlugin$getInt$1.dex
+                            - SharedPreferencesPlugin$getKeys$prefs$1.dex
+                            - SharedPreferencesPlugin$getPrefs$1.dex
+                            - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1$2$1.dex
+                            - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1$2.dex
+                            - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1.dex
+                            - SharedPreferencesPlugin$getString$1.dex
+                            - SharedPreferencesPlugin$getValueByKey$$inlined$map$1$2$1.dex
+                            - SharedPreferencesPlugin$getValueByKey$$inlined$map$1$2.dex
+                            - SharedPreferencesPlugin$getValueByKey$$inlined$map$1.dex
+                            - SharedPreferencesPlugin$readAllKeys$$inlined$map$1$2$1.dex
+                            - SharedPreferencesPlugin$readAllKeys$$inlined$map$1$2.dex
+                            - SharedPreferencesPlugin$readAllKeys$$inlined$map$1.dex
+                            - SharedPreferencesPlugin$setBool$1$1.dex
+                            - SharedPreferencesPlugin$setBool$1.dex
+                            - SharedPreferencesPlugin$setDeprecatedStringList$1.dex
+                            - SharedPreferencesPlugin$setDouble$1$1.dex
+                            - SharedPreferencesPlugin$setDouble$1.dex
+                            - SharedPreferencesPlugin$setEncodedStringList$1.dex
+                            - SharedPreferencesPlugin$setInt$1$1.dex
+                            - SharedPreferencesPlugin$setInt$1.dex
+                            - SharedPreferencesPlugin$setString$1.dex
+                            - SharedPreferencesPlugin.dex
+                            - SharedPreferencesPluginKt.dex
+                            - StringListLookupResultType$Companion.dex
+                            - StringListLookupResultType.dex
+                            - StringListObjectInputStream.dex
+                            - StringListResult$Companion.dex
+                            - StringListResult.dex
+          - carpeta: generated
+            - carpeta: ap_generated_sources
+              - carpeta: debug
+                - carpeta: out
+            - carpeta: res
+              - carpeta: pngs
+                - carpeta: debug
+              - carpeta: resValues
+                - carpeta: debug
+          - carpeta: intermediates
+            - carpeta: aapt_friendly_merged_manifests
+              - carpeta: debug
+                - carpeta: processDebugManifest
+                  - carpeta: aapt
+                    archivos:
+                      - AndroidManifest.xml
+                      - output-metadata.json
+            - carpeta: aar_libs_directory
+              - carpeta: debug
+                - carpeta: syncDebugLibJars
+                  - carpeta: libs
+            - carpeta: aar_main_jar
+              - carpeta: debug
+                - carpeta: syncDebugLibJars
+                  archivos:
+                    - classes.jar
+            - carpeta: aar_metadata
+              - carpeta: debug
+                - carpeta: writeDebugAarMetadata
+                  archivos:
+                    - aar-metadata.properties
+            - carpeta: annotations_typedef_file
+              - carpeta: debug
+                - carpeta: extractDebugAnnotations
+                  archivos:
+                    - typedefs.txt
+            - carpeta: annotations_zip
+              - carpeta: debug
+                - carpeta: extractDebugAnnotations
+            - carpeta: annotation_processor_list
+              - carpeta: debug
+                - carpeta: javaPreCompileDebug
+                  archivos:
+                    - annotationProcessors.json
+            - carpeta: assets
+              - carpeta: debug
+                - carpeta: mergeDebugAssets
+            - carpeta: compiled_local_resources
+              - carpeta: debug
+                - carpeta: compileDebugLibraryResources
+                  - carpeta: out
+            - carpeta: compile_library_classes_jar
+              - carpeta: debug
+                - carpeta: bundleLibCompileToJarDebug
+                  archivos:
+                    - classes.jar
+            - carpeta: compile_r_class_jar
+              - carpeta: debug
+                - carpeta: generateDebugRFile
+                  archivos:
+                    - R.jar
+            - carpeta: compile_symbol_list
+              - carpeta: debug
+                - carpeta: generateDebugRFile
+                  archivos:
+                    - R.txt
+            - carpeta: data_binding_layout_info_type_package
+              - carpeta: debug
+                - carpeta: packageDebugResources
+                  - carpeta: out
+            - carpeta: generated_proguard_file
+              - carpeta: debug
+                - carpeta: mergeDebugGeneratedProguardFiles
+            - carpeta: incremental
+              - carpeta: debug
+                - carpeta: packageDebugResources
+                  archivos:
+                    - compile-file-map.properties
+                    - merger.xml
+                  - carpeta: merged.dir
+                  - carpeta: stripped.dir
+              - carpeta: debug-mergeJavaRes
+                archivos:
+                  - merge-state
+                - carpeta: zip-cache
+              - carpeta: mergeDebugAssets
+                archivos:
+                  - merger.xml
+              - carpeta: mergeDebugJniLibFolders
+                archivos:
+                  - merger.xml
+              - carpeta: mergeDebugShaders
+                archivos:
+                  - merger.xml
+            - carpeta: javac
+              - carpeta: debug
+                - carpeta: compileDebugJavaWithJavac
+                  - carpeta: classes
+                    - carpeta: io
+                      - carpeta: flutter
+                        - carpeta: plugins
+                          - carpeta: sharedpreferences
+                            archivos:
+                              - LegacySharedPreferencesPlugin$ListEncoder.class
+                              - LegacySharedPreferencesPlugin.class
+                              - Messages$FlutterError.class
+                              - Messages$PigeonCodec.class
+                              - Messages$SharedPreferencesApi.class
+                              - Messages.class
+                              - SharedPreferencesListEncoder.class
+            - carpeta: java_res
+              - carpeta: debug
+                - carpeta: processDebugJavaRes
+                  - carpeta: out
+                    - carpeta: io
+                      - carpeta: flutter
+                        - carpeta: plugins
+                          - carpeta: sharedpreferences
+                    - carpeta: META-INF
+                      archivos:
+                        - shared_preferences_android_debug.kotlin_module
+            - carpeta: library_and_local_jars_jni
+              - carpeta: debug
+                - carpeta: copyDebugJniLibsProjectAndLocalJars
+                  - carpeta: jni
+            - carpeta: library_art_profile
+              - carpeta: debug
+                - carpeta: prepareDebugArtProfile
+            - carpeta: library_jni
+              - carpeta: debug
+                - carpeta: copyDebugJniLibsProjectOnly
+                  - carpeta: jni
+            - carpeta: lint_publish_jar
+              - carpeta: global
+                - carpeta: prepareLintJarForPublish
+            - carpeta: local_only_symbol_list
+              - carpeta: debug
+                - carpeta: parseDebugLocalResources
+                  archivos:
+                    - R-def.txt
+            - carpeta: manifest_merge_blame_file
+              - carpeta: debug
+                - carpeta: processDebugManifest
+                  archivos:
+                    - manifest-merger-blame-debug-report.txt
+            - carpeta: merged_consumer_proguard_file
+              - carpeta: debug
+                - carpeta: mergeDebugConsumerProguardFiles
+            - carpeta: merged_java_res
+              - carpeta: debug
+                - carpeta: mergeDebugJavaResource
+                  archivos:
+                    - feature-shared_preferences_android.jar
+            - carpeta: merged_jni_libs
+              - carpeta: debug
+                - carpeta: mergeDebugJniLibFolders
+                  - carpeta: out
+            - carpeta: merged_manifest
+              - carpeta: debug
+                - carpeta: processDebugManifest
+                  archivos:
+                    - AndroidManifest.xml
+            - carpeta: merged_shaders
+              - carpeta: debug
+                - carpeta: mergeDebugShaders
+                  - carpeta: out
+            - carpeta: navigation_json
+              - carpeta: debug
+                - carpeta: extractDeepLinksDebug
+                  archivos:
+                    - navigation.json
+            - carpeta: navigation_json_for_aar
+              - carpeta: debug
+                - carpeta: extractDeepLinksForAarDebug
+            - carpeta: nested_resources_validation_report
+              - carpeta: debug
+                - carpeta: generateDebugResources
+                  archivos:
+                    - nestedResourcesValidationReport.txt
+            - carpeta: packaged_res
+              - carpeta: debug
+                - carpeta: packageDebugResources
+            - carpeta: public_res
+              - carpeta: debug
+                - carpeta: packageDebugResources
+            - carpeta: runtime_library_classes_dir
+              - carpeta: debug
+                - carpeta: bundleLibRuntimeToDirDebug
+                  - carpeta: io
+                    - carpeta: flutter
+                      - carpeta: plugins
+                        - carpeta: sharedpreferences
+                          archivos:
+                            - LegacySharedPreferencesPlugin$ListEncoder.class
+                            - LegacySharedPreferencesPlugin.class
+                            - ListEncoder.class
+                            - Messages$FlutterError.class
+                            - Messages$PigeonCodec.class
+                            - Messages$SharedPreferencesApi.class
+                            - Messages.class
+                            - MessagesAsyncPigeonCodec.class
+                            - MessagesAsync_gKt.class
+                            - SharedPreferencesAsyncApi$Companion.class
+                            - SharedPreferencesAsyncApi.class
+                            - SharedPreferencesBackend.class
+                            - SharedPreferencesError.class
+                            - SharedPreferencesListEncoder.class
+                            - SharedPreferencesPigeonOptions$Companion.class
+                            - SharedPreferencesPigeonOptions.class
+                            - SharedPreferencesPlugin$clear$1$1.class
+                            - SharedPreferencesPlugin$clear$1.class
+                            - SharedPreferencesPlugin$dataStoreSetString$2.class
+                            - SharedPreferencesPlugin$getAll$1.class
+                            - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1$2$1.class
+                            - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1$2.class
+                            - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1.class
+                            - SharedPreferencesPlugin$getBool$1.class
+                            - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1$2$1.class
+                            - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1$2.class
+                            - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1.class
+                            - SharedPreferencesPlugin$getDouble$1.class
+                            - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1$2$1.class
+                            - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1$2.class
+                            - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1.class
+                            - SharedPreferencesPlugin$getInt$1.class
+                            - SharedPreferencesPlugin$getKeys$prefs$1.class
+                            - SharedPreferencesPlugin$getPrefs$1.class
+                            - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1$2$1.class
+                            - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1$2.class
+                            - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1.class
+                            - SharedPreferencesPlugin$getString$1.class
+                            - SharedPreferencesPlugin$getValueByKey$$inlined$map$1$2$1.class
+                            - SharedPreferencesPlugin$getValueByKey$$inlined$map$1$2.class
+                            - SharedPreferencesPlugin$getValueByKey$$inlined$map$1.class
+                            - SharedPreferencesPlugin$readAllKeys$$inlined$map$1$2$1.class
+                            - SharedPreferencesPlugin$readAllKeys$$inlined$map$1$2.class
+                            - SharedPreferencesPlugin$readAllKeys$$inlined$map$1.class
+                            - SharedPreferencesPlugin$setBool$1$1.class
+                            - SharedPreferencesPlugin$setBool$1.class
+                            - SharedPreferencesPlugin$setDeprecatedStringList$1.class
+                            - SharedPreferencesPlugin$setDouble$1$1.class
+                            - SharedPreferencesPlugin$setDouble$1.class
+                            - SharedPreferencesPlugin$setEncodedStringList$1.class
+                            - SharedPreferencesPlugin$setInt$1$1.class
+                            - SharedPreferencesPlugin$setInt$1.class
+                            - SharedPreferencesPlugin$setString$1.class
+                            - SharedPreferencesPlugin.class
+                            - SharedPreferencesPluginKt.class
+                            - StringListLookupResultType$Companion.class
+                            - StringListLookupResultType.class
+                            - StringListObjectInputStream.class
+                            - StringListResult$Companion.class
+                            - StringListResult.class
+                  - carpeta: META-INF
+                    archivos:
+                      - shared_preferences_android_debug.kotlin_module
+            - carpeta: symbol_list_with_package_name
+              - carpeta: debug
+                - carpeta: generateDebugRFile
+                  archivos:
+                    - package-aware-r.txt
+          - carpeta: kotlin
+            - carpeta: compileDebugKotlin
+              - carpeta: cacheable
+                archivos:
+                  - last-build.bin
+                - carpeta: caches-jvm
+                  - carpeta: inputs
+                    archivos:
+                      - source-to-output.tab
+                      - source-to-output.tab.keystream
+                      - source-to-output.tab.keystream.len
+                      - source-to-output.tab.len
+                      - source-to-output.tab.values.at
+                      - source-to-output.tab_i
+                      - source-to-output.tab_i.len
+                  - carpeta: jvm
+                    - carpeta: kotlin
+                      archivos:
+                        - class-attributes.tab
+                        - class-attributes.tab.keystream
+                        - class-attributes.tab.keystream.len
+                        - class-attributes.tab.len
+                        - class-attributes.tab.values.at
+                        - class-attributes.tab_i
+                        - class-attributes.tab_i.len
+                        - class-fq-name-to-source.tab
+                        - class-fq-name-to-source.tab.keystream
+                        - class-fq-name-to-source.tab.keystream.len
+                        - class-fq-name-to-source.tab.len
+                        - class-fq-name-to-source.tab.values.at
+                        - class-fq-name-to-source.tab_i
+                        - class-fq-name-to-source.tab_i.len
+                        - constants.tab
+                        - constants.tab.keystream
+                        - constants.tab.keystream.len
+                        - constants.tab.len
+                        - constants.tab.values.at
+                        - constants.tab_i
+                        - constants.tab_i.len
+                        - internal-name-to-source.tab
+                        - internal-name-to-source.tab.keystream
+                        - internal-name-to-source.tab.keystream.len
+                        - internal-name-to-source.tab.len
+                        - internal-name-to-source.tab.values.at
+                        - internal-name-to-source.tab_i
+                        - internal-name-to-source.tab_i.len
+                        - package-parts.tab
+                        - package-parts.tab.keystream
+                        - package-parts.tab.keystream.len
+                        - package-parts.tab.len
+                        - package-parts.tab.values.at
+                        - package-parts.tab_i
+                        - package-parts.tab_i.len
+                        - proto.tab
+                        - proto.tab.keystream
+                        - proto.tab.keystream.len
+                        - proto.tab.len
+                        - proto.tab.values.at
+                        - proto.tab_i
+                        - proto.tab_i.len
+                        - source-to-classes.tab
+                        - source-to-classes.tab.keystream
+                        - source-to-classes.tab.keystream.len
+                        - source-to-classes.tab.len
+                        - source-to-classes.tab.values.at
+                        - source-to-classes.tab_i
+                        - source-to-classes.tab_i.len
+                        - subtypes.tab
+                        - subtypes.tab.keystream
+                        - subtypes.tab.keystream.len
+                        - subtypes.tab.len
+                        - subtypes.tab.values.at
+                        - subtypes.tab_i
+                        - subtypes.tab_i.len
+                        - supertypes.tab
+                        - supertypes.tab.keystream
+                        - supertypes.tab.keystream.len
+                        - supertypes.tab.len
+                        - supertypes.tab.values.at
+                        - supertypes.tab_i
+                        - supertypes.tab_i.len
+                  - carpeta: lookups
+                    archivos:
+                      - counters.tab
+                      - file-to-id.tab
+                      - file-to-id.tab.keystream
+                      - file-to-id.tab.keystream.len
+                      - file-to-id.tab.len
+                      - file-to-id.tab.values.at
+                      - file-to-id.tab_i
+                      - file-to-id.tab_i.len
+                      - id-to-file.tab
+                      - id-to-file.tab.keystream
+                      - id-to-file.tab.keystream.len
+                      - id-to-file.tab.len
+                      - id-to-file.tab.values.at
+                      - id-to-file.tab_i
+                      - id-to-file.tab_i.len
+                      - lookups.tab
+                      - lookups.tab.keystream
+                      - lookups.tab.keystream.len
+                      - lookups.tab.len
+                      - lookups.tab.values.at
+                      - lookups.tab_i
+                      - lookups.tab_i.len
+              - carpeta: classpath-snapshot
+                archivos:
+                  - shrunk-classpath-snapshot.bin
+              - carpeta: local-state
+                archivos:
+                  - build-history.bin
+          - carpeta: outputs
+            - carpeta: aar
+              archivos:
+                - shared_preferences_android-debug.aar
+            - carpeta: logs
+              archivos:
+                - manifest-merger-debug-report.txt
+          - carpeta: tmp
+            - carpeta: compileDebugJavaWithJavac
+              archivos:
+                - previous-compilation-data.bin
+            - carpeta: kotlin-classes
+              - carpeta: debug
+                - carpeta: io
+                  - carpeta: flutter
+                    - carpeta: plugins
+                      - carpeta: sharedpreferences
+                        archivos:
+                          - ListEncoder.class
+                          - MessagesAsyncPigeonCodec.class
+                          - MessagesAsync_gKt.class
+                          - SharedPreferencesAsyncApi$Companion.class
+                          - SharedPreferencesAsyncApi.class
+                          - SharedPreferencesBackend.class
+                          - SharedPreferencesError.class
+                          - SharedPreferencesPigeonOptions$Companion.class
+                          - SharedPreferencesPigeonOptions.class
+                          - SharedPreferencesPlugin$clear$1$1.class
+                          - SharedPreferencesPlugin$clear$1.class
+                          - SharedPreferencesPlugin$dataStoreSetString$2.class
+                          - SharedPreferencesPlugin$getAll$1.class
+                          - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1$2$1.class
+                          - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1$2.class
+                          - SharedPreferencesPlugin$getBool$1$invokeSuspend$$inlined$map$1.class
+                          - SharedPreferencesPlugin$getBool$1.class
+                          - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1$2$1.class
+                          - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1$2.class
+                          - SharedPreferencesPlugin$getDouble$1$invokeSuspend$$inlined$map$1.class
+                          - SharedPreferencesPlugin$getDouble$1.class
+                          - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1$2$1.class
+                          - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1$2.class
+                          - SharedPreferencesPlugin$getInt$1$invokeSuspend$$inlined$map$1.class
+                          - SharedPreferencesPlugin$getInt$1.class
+                          - SharedPreferencesPlugin$getKeys$prefs$1.class
+                          - SharedPreferencesPlugin$getPrefs$1.class
+                          - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1$2$1.class
+                          - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1$2.class
+                          - SharedPreferencesPlugin$getString$1$invokeSuspend$$inlined$map$1.class
+                          - SharedPreferencesPlugin$getString$1.class
+                          - SharedPreferencesPlugin$getValueByKey$$inlined$map$1$2$1.class
+                          - SharedPreferencesPlugin$getValueByKey$$inlined$map$1$2.class
+                          - SharedPreferencesPlugin$getValueByKey$$inlined$map$1.class
+                          - SharedPreferencesPlugin$readAllKeys$$inlined$map$1$2$1.class
+                          - SharedPreferencesPlugin$readAllKeys$$inlined$map$1$2.class
+                          - SharedPreferencesPlugin$readAllKeys$$inlined$map$1.class
+                          - SharedPreferencesPlugin$setBool$1$1.class
+                          - SharedPreferencesPlugin$setBool$1.class
+                          - SharedPreferencesPlugin$setDeprecatedStringList$1.class
+                          - SharedPreferencesPlugin$setDouble$1$1.class
+                          - SharedPreferencesPlugin$setDouble$1.class
+                          - SharedPreferencesPlugin$setEncodedStringList$1.class
+                          - SharedPreferencesPlugin$setInt$1$1.class
+                          - SharedPreferencesPlugin$setInt$1.class
+                          - SharedPreferencesPlugin$setString$1.class
+                          - SharedPreferencesPlugin.class
+                          - SharedPreferencesPluginKt.class
+                          - StringListLookupResultType$Companion.class
+                          - StringListLookupResultType.class
+                          - StringListObjectInputStream.class
+                          - StringListResult$Companion.class
+                          - StringListResult.class
+                - carpeta: META-INF
+                  archivos:
+                    - shared_preferences_android_debug.kotlin_module
+      - carpeta: ios
+        archivos:
+          - .gitignore
+        - carpeta: Flutter
+          archivos:
+            - AppFrameworkInfo.plist
+            - Debug.xcconfig
+            - flutter_export_environment.sh
+            - Generated.xcconfig
+            - Release.xcconfig
+          - carpeta: ephemeral
+            archivos:
+              - flutter_lldbinit
+              - flutter_lldb_helper.py
+        - carpeta: Runner
+          archivos:
+            - AppDelegate.swift
+            - GeneratedPluginRegistrant.h
+            - GeneratedPluginRegistrant.m
+            - Info.plist
+            - Runner-Bridging-Header.h
+          - carpeta: Assets.xcassets
+            - carpeta: AppIcon.appiconset
+              archivos:
+                - Contents.json
+                - Icon-App-1024x1024@1x.png
+                - Icon-App-20x20@1x.png
+                - Icon-App-20x20@2x.png
+                - Icon-App-20x20@3x.png
+                - Icon-App-29x29@1x.png
+                - Icon-App-29x29@2x.png
+                - Icon-App-29x29@3x.png
+                - Icon-App-40x40@1x.png
+                - Icon-App-40x40@2x.png
+                - Icon-App-40x40@3x.png
+                - Icon-App-60x60@2x.png
+                - Icon-App-60x60@3x.png
+                - Icon-App-76x76@1x.png
+                - Icon-App-76x76@2x.png
+                - Icon-App-83.5x83.5@2x.png
+            - carpeta: LaunchImage.imageset
+              archivos:
+                - Contents.json
+                - LaunchImage.png
+                - LaunchImage@2x.png
+                - LaunchImage@3x.png
+                - README.md
+          - carpeta: Base.lproj
+            archivos:
+              - LaunchScreen.storyboard
+              - Main.storyboard
+        - carpeta: Runner.xcodeproj
+          archivos:
+            - project.pbxproj
+          - carpeta: project.xcworkspace
+            archivos:
+              - contents.xcworkspacedata
+            - carpeta: xcshareddata
+              archivos:
+                - IDEWorkspaceChecks.plist
+                - WorkspaceSettings.xcsettings
+          - carpeta: xcshareddata
+            - carpeta: xcschemes
+              archivos:
+                - Runner.xcscheme
+        - carpeta: Runner.xcworkspace
+          archivos:
+            - contents.xcworkspacedata
+          - carpeta: xcshareddata
+            archivos:
+              - IDEWorkspaceChecks.plist
+              - WorkspaceSettings.xcsettings
+        - carpeta: RunnerTests
+          archivos:
+            - RunnerTests.swift
+      - carpeta: lib
+        archivos:
+          - app.dart
+          - chat_page.dart
+          - login.dart
+          - main.dart
+          - signup.dart
+        - carpeta: core
+          archivos:
+            - theme.dart
+        - carpeta: data
+          - carpeta: api
+          - carpeta: models
+        - carpeta: features
+          - carpeta: auth
+            archivos:
+              - login_page.dart
+              - signup_page.dart
+          - carpeta: chat
+            archivos:
+              - chat_conversation_page.dart
+              - chat_list_page.dart
+        - carpeta: ui
+          - carpeta: widgets
+      - carpeta: linux
+        archivos:
+          - .gitignore
+          - CMakeLists.txt
+        - carpeta: flutter
+          archivos:
+            - CMakeLists.txt
+            - generated_plugins.cmake
+            - generated_plugin_registrant.cc
+            - generated_plugin_registrant.h
+          - carpeta: ephemeral
+            - carpeta: .plugin_symlinks
+              - carpeta: path_provider_linux
+                archivos:
+                  - AUTHORS
+                  - CHANGELOG.md
+                  - LICENSE
+                  - pubspec.yaml
+                  - README.md
+                - carpeta: example
+                  archivos:
+                    - pubspec.yaml
+                    - README.md
+                  - carpeta: integration_test
+                    archivos:
+                      - path_provider_test.dart
+                  - carpeta: lib
+                    archivos:
+                      - main.dart
+                  - carpeta: linux
+                    archivos:
+                      - CMakeLists.txt
+                      - main.cc
+                      - my_application.cc
+                      - my_application.h
+                    - carpeta: flutter
+                      archivos:
+                        - CMakeLists.txt
+                        - generated_plugins.cmake
+                  - carpeta: test_driver
+                    archivos:
+                      - integration_test.dart
+                - carpeta: lib
+                  archivos:
+                    - path_provider_linux.dart
+                  - carpeta: src
+                    archivos:
+                      - get_application_id.dart
+                      - get_application_id_real.dart
+                      - get_application_id_stub.dart
+                      - path_provider_linux.dart
+                - carpeta: test
+                  archivos:
+                    - get_application_id_test.dart
+                    - path_provider_linux_test.dart
+              - carpeta: shared_preferences_linux
+                archivos:
+                  - AUTHORS
+                  - CHANGELOG.md
+                  - LICENSE
+                  - pubspec.yaml
+                  - README.md
+                - carpeta: example
+                  archivos:
+                    - pubspec.yaml
+                    - README.md
+                  - carpeta: integration_test
+                    archivos:
+                      - shared_preferences_test.dart
+                  - carpeta: lib
+                    archivos:
+                      - main.dart
+                  - carpeta: linux
+                    archivos:
+                      - CMakeLists.txt
+                      - main.cc
+                      - my_application.cc
+                      - my_application.h
+                    - carpeta: flutter
+                      archivos:
+                        - CMakeLists.txt
+                        - generated_plugins.cmake
+                  - carpeta: test_driver
+                    archivos:
+                      - integration_test.dart
+                - carpeta: lib
+                  archivos:
+                    - shared_preferences_linux.dart
+                - carpeta: test
+                  archivos:
+                    - fake_path_provider_linux.dart
+                    - legacy_shared_preferences_linux_test.dart
+                    - shared_preferences_linux_async_test.dart
+        - carpeta: runner
+          archivos:
+            - CMakeLists.txt
+            - main.cc
+            - my_application.cc
+            - my_application.h
+      - carpeta: macos
+        archivos:
+          - .gitignore
+        - carpeta: Flutter
+          archivos:
+            - Flutter-Debug.xcconfig
+            - Flutter-Release.xcconfig
+            - GeneratedPluginRegistrant.swift
+          - carpeta: ephemeral
+            archivos:
+              - Flutter-Generated.xcconfig
+              - flutter_export_environment.sh
+        - carpeta: Runner
+          archivos:
+            - AppDelegate.swift
+            - DebugProfile.entitlements
+            - Info.plist
+            - MainFlutterWindow.swift
+            - Release.entitlements
+          - carpeta: Assets.xcassets
+            - carpeta: AppIcon.appiconset
+              archivos:
+                - app_icon_1024.png
+                - app_icon_128.png
+                - app_icon_16.png
+                - app_icon_256.png
+                - app_icon_32.png
+                - app_icon_512.png
+                - app_icon_64.png
+                - Contents.json
+          - carpeta: Base.lproj
+            archivos:
+              - MainMenu.xib
+          - carpeta: Configs
+            archivos:
+              - AppInfo.xcconfig
+              - Debug.xcconfig
+              - Release.xcconfig
+              - Warnings.xcconfig
+        - carpeta: Runner.xcodeproj
+          archivos:
+            - project.pbxproj
+          - carpeta: project.xcworkspace
+            - carpeta: xcshareddata
+              archivos:
+                - IDEWorkspaceChecks.plist
+          - carpeta: xcshareddata
+            - carpeta: xcschemes
+              archivos:
+                - Runner.xcscheme
+        - carpeta: Runner.xcworkspace
+          archivos:
+            - contents.xcworkspacedata
+          - carpeta: xcshareddata
+            archivos:
+              - IDEWorkspaceChecks.plist
+        - carpeta: RunnerTests
+          archivos:
+            - RunnerTests.swift
+      - carpeta: test
+        archivos:
+          - widget_test.dart
+      - carpeta: web
+        archivos:
+          - favicon.png
+          - index.html
+          - manifest.json
+        - carpeta: icons
+          archivos:
+            - Icon-192.png
+            - Icon-512.png
+            - Icon-maskable-192.png
+            - Icon-maskable-512.png
+      - carpeta: windows
+        archivos:
+          - .gitignore
+          - CMakeLists.txt
+        - carpeta: flutter
+          archivos:
+            - CMakeLists.txt
+            - generated_plugins.cmake
+            - generated_plugin_registrant.cc
+            - generated_plugin_registrant.h
+          - carpeta: ephemeral
+            - carpeta: .plugin_symlinks
+              - carpeta: path_provider_windows
+                archivos:
+                  - AUTHORS
+                  - CHANGELOG.md
+                  - LICENSE
+                  - pubspec.yaml
+                  - README.md
+                - carpeta: example
+                  archivos:
+                    - pubspec.yaml
+                    - README.md
+                  - carpeta: integration_test
+                    archivos:
+                      - path_provider_test.dart
+                  - carpeta: lib
+                    archivos:
+                      - main.dart
+                  - carpeta: test_driver
+                    archivos:
+                      - integration_test.dart
+                  - carpeta: windows
+                    archivos:
+                      - CMakeLists.txt
+                    - carpeta: flutter
+                      archivos:
+                        - CMakeLists.txt
+                        - generated_plugins.cmake
+                    - carpeta: runner
+                      archivos:
+                        - CMakeLists.txt
+                        - flutter_window.cpp
+                        - flutter_window.h
+                        - main.cpp
+                        - resource.h
+                        - runner.exe.manifest
+                        - Runner.rc
+                        - run_loop.cpp
+                        - run_loop.h
+                        - utils.cpp
+                        - utils.h
+                        - win32_window.cpp
+                        - win32_window.h
+                      - carpeta: resources
+                        archivos:
+                          - app_icon.ico
+                - carpeta: lib
+                  archivos:
+                    - path_provider_windows.dart
+                  - carpeta: src
+                    archivos:
+                      - folders.dart
+                      - folders_stub.dart
+                      - guid.dart
+                      - path_provider_windows_real.dart
+                      - path_provider_windows_stub.dart
+                      - win32_wrappers.dart
+                - carpeta: test
+                  archivos:
+                    - guid_test.dart
+                    - path_provider_windows_test.dart
+              - carpeta: shared_preferences_windows
+                archivos:
+                  - AUTHORS
+                  - CHANGELOG.md
+                  - LICENSE
+                  - pubspec.yaml
+                  - README.md
+                - carpeta: example
+                  archivos:
+                    - AUTHORS
+                    - LICENSE
+                    - pubspec.yaml
+                    - README.md
+                  - carpeta: integration_test
+                    archivos:
+                      - shared_preferences_test.dart
+                  - carpeta: lib
+                    archivos:
+                      - main.dart
+                  - carpeta: test_driver
+                    archivos:
+                      - integration_test.dart
+                  - carpeta: windows
+                    archivos:
+                      - CMakeLists.txt
+                    - carpeta: flutter
+                      archivos:
+                        - CMakeLists.txt
+                        - generated_plugins.cmake
+                    - carpeta: runner
+                      archivos:
+                        - CMakeLists.txt
+                        - flutter_window.cpp
+                        - flutter_window.h
+                        - main.cpp
+                        - resource.h
+                        - runner.exe.manifest
+                        - Runner.rc
+                        - run_loop.cpp
+                        - run_loop.h
+                        - utils.cpp
+                        - utils.h
+                        - win32_window.cpp
+                        - win32_window.h
+                      - carpeta: resources
+                        archivos:
+                          - app_icon.ico
+                - carpeta: lib
+                  archivos:
+                    - shared_preferences_windows.dart
+                - carpeta: test
+                  archivos:
+                    - fake_path_provider_windows.dart
+                    - legacy_shared_preferences_windows_test.dart
+                    - shared_preferences_windows_async_test.dart
+        - carpeta: runner
+          archivos:
+            - CMakeLists.txt
+            - flutter_window.cpp
+            - flutter_window.h
+            - main.cpp
+            - resource.h
+            - runner.exe.manifest
+            - Runner.rc
+            - utils.cpp
+            - utils.h
+            - win32_window.cpp
+            - win32_window.h
+          - carpeta: resources
+            archivos:
+              - app_icon.ico
+    - carpeta: node_modules
+      archivos:
+        - .package-lock.json
+      - carpeta: .bin
+        archivos:
+          - mime
+          - mime.cmd
+          - mime.ps1
+          - node-gyp-build
+          - node-gyp-build-optional
+          - node-gyp-build-optional.cmd
+          - node-gyp-build-optional.ps1
+          - node-gyp-build-test
+          - node-gyp-build-test.cmd
+          - node-gyp-build-test.ps1
+          - node-gyp-build.cmd
+          - node-gyp-build.ps1
+          - semver
+          - semver.cmd
+          - semver.ps1
+      - carpeta: accepts
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: array-flatten
+        archivos:
+          - array-flatten.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: bcrypt
+        archivos:
+          - .dockerignore
+          - .editorconfig
+          - bcrypt.js
+          - binding.gyp
+          - build-all.sh
+          - CHANGELOG.md
+          - Dockerfile
+          - Dockerfile-alpine
+          - ISSUE_TEMPLATE.md
+          - LICENSE
+          - Makefile
+          - package.json
+          - promises.js
+          - README.md
+          - SECURITY.md
+        - carpeta: .github
+          - carpeta: workflows
+            archivos:
+              - build-pack-publish.yml
+              - ci.yaml
+        - carpeta: examples
+          archivos:
+            - async_compare.js
+            - forever_gen_salt.js
+        - carpeta: prebuilds
+          - carpeta: darwin-arm64
+            archivos:
+              - bcrypt.node
+          - carpeta: darwin-x64
+            archivos:
+              - bcrypt.node
+          - carpeta: linux-arm
+            archivos:
+              - bcrypt.glibc.node
+              - bcrypt.musl.node
+          - carpeta: linux-arm64
+            archivos:
+              - bcrypt.glibc.node
+              - bcrypt.musl.node
+          - carpeta: linux-x64
+            archivos:
+              - bcrypt.glibc.node
+              - bcrypt.musl.node
+          - carpeta: win32-arm64
+            archivos:
+              - bcrypt.node
+          - carpeta: win32-x64
+            archivos:
+              - bcrypt.node
+        - carpeta: src
+          archivos:
+            - bcrypt.cc
+            - bcrypt_node.cc
+            - blowfish.cc
+            - node_blf.h
+        - carpeta: test
+          archivos:
+            - async.test.js
+            - implementation.test.js
+            - promise.test.js
+            - repetitions.test.js
+            - sync.test.js
+      - carpeta: body-parser
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: lib
+          archivos:
+            - read.js
+            - utils.js
+          - carpeta: types
+            archivos:
+              - json.js
+              - raw.js
+              - text.js
+              - urlencoded.js
+        - carpeta: node_modules
+          - carpeta: debug
+            archivos:
+              - LICENSE
+              - package.json
+              - README.md
+            - carpeta: src
+              archivos:
+                - browser.js
+                - common.js
+                - index.js
+                - node.js
+          - carpeta: media-typer
+            archivos:
+              - HISTORY.md
+              - index.js
+              - LICENSE
+              - package.json
+              - README.md
+          - carpeta: mime-db
+            archivos:
+              - db.json
+              - HISTORY.md
+              - index.js
+              - LICENSE
+              - package.json
+              - README.md
+          - carpeta: mime-types
+            archivos:
+              - HISTORY.md
+              - index.js
+              - LICENSE
+              - mimeScore.js
+              - package.json
+              - README.md
+          - carpeta: ms
+            archivos:
+              - index.js
+              - license.md
+              - package.json
+              - readme.md
+          - carpeta: qs
+            archivos:
+              - .editorconfig
+              - .eslintrc
+              - .nycrc
+              - CHANGELOG.md
+              - LICENSE.md
+              - package.json
+              - README.md
+            - carpeta: .github
+              archivos:
+                - FUNDING.yml
+            - carpeta: dist
+              archivos:
+                - qs.js
+            - carpeta: lib
+              archivos:
+                - formats.js
+                - index.js
+                - parse.js
+                - stringify.js
+                - utils.js
+            - carpeta: test
+              archivos:
+                - empty-keys-cases.js
+                - parse.js
+                - stringify.js
+                - utils.js
+          - carpeta: type-is
+            archivos:
+              - HISTORY.md
+              - index.js
+              - LICENSE
+              - package.json
+              - README.md
+      - carpeta: buffer-equal-constant-time
+        archivos:
+          - .npmignore
+          - .travis.yml
+          - index.js
+          - LICENSE.txt
+          - package.json
+          - README.md
+          - test.js
+      - carpeta: bytes
+        archivos:
+          - History.md
+          - index.js
+          - LICENSE
+          - package.json
+          - Readme.md
+      - carpeta: call-bind-apply-helpers
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - actualApply.d.ts
+          - actualApply.js
+          - applyBind.d.ts
+          - applyBind.js
+          - CHANGELOG.md
+          - functionApply.d.ts
+          - functionApply.js
+          - functionCall.d.ts
+          - functionCall.js
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - reflectApply.d.ts
+          - reflectApply.js
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: call-bound
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: content-disposition
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: content-type
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: cookie
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - SECURITY.md
+      - carpeta: cookie-signature
+        archivos:
+          - .npmignore
+          - History.md
+          - index.js
+          - package.json
+          - Readme.md
+      - carpeta: cors
+        archivos:
+          - CONTRIBUTING.md
+          - HISTORY.md
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: lib
+          archivos:
+            - index.js
+      - carpeta: debug
+        archivos:
+          - .coveralls.yml
+          - .eslintrc
+          - .npmignore
+          - .travis.yml
+          - CHANGELOG.md
+          - component.json
+          - karma.conf.js
+          - LICENSE
+          - Makefile
+          - node.js
+          - package.json
+          - README.md
+        - carpeta: src
+          archivos:
+            - browser.js
+            - debug.js
+            - index.js
+            - inspector-log.js
+            - node.js
+      - carpeta: depd
+        archivos:
+          - History.md
+          - index.js
+          - LICENSE
+          - package.json
+          - Readme.md
+        - carpeta: lib
+          - carpeta: browser
+            archivos:
+              - index.js
+      - carpeta: destroy
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: dunder-proto
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - get.d.ts
+          - get.js
+          - LICENSE
+          - package.json
+          - README.md
+          - set.d.ts
+          - set.js
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - get.js
+            - index.js
+            - set.js
+      - carpeta: ecdsa-sig-formatter
+        archivos:
+          - CODEOWNERS
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: src
+          archivos:
+            - ecdsa-sig-formatter.d.ts
+            - ecdsa-sig-formatter.js
+            - param-bytes-for-alg.js
+      - carpeta: ee-first
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: encodeurl
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: es-define-property
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: es-errors
+        archivos:
+          - .eslintrc
+          - CHANGELOG.md
+          - eval.d.ts
+          - eval.js
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - range.d.ts
+          - range.js
+          - README.md
+          - ref.d.ts
+          - ref.js
+          - syntax.d.ts
+          - syntax.js
+          - tsconfig.json
+          - type.d.ts
+          - type.js
+          - uri.d.ts
+          - uri.js
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: es-object-atoms
+        archivos:
+          - .eslintrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - isObject.d.ts
+          - isObject.js
+          - LICENSE
+          - package.json
+          - README.md
+          - RequireObjectCoercible.d.ts
+          - RequireObjectCoercible.js
+          - ToObject.d.ts
+          - ToObject.js
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: escape-html
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - Readme.md
+      - carpeta: etag
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: express
+        archivos:
+          - History.md
+          - index.js
+          - LICENSE
+          - package.json
+          - Readme.md
+        - carpeta: lib
+          archivos:
+            - application.js
+            - express.js
+            - request.js
+            - response.js
+            - utils.js
+            - view.js
+          - carpeta: middleware
+            archivos:
+              - init.js
+              - query.js
+          - carpeta: router
+            archivos:
+              - index.js
+              - layer.js
+              - route.js
+        - carpeta: node_modules
+          - carpeta: body-parser
+            archivos:
+              - HISTORY.md
+              - index.js
+              - LICENSE
+              - package.json
+              - README.md
+              - SECURITY.md
+            - carpeta: lib
+              archivos:
+                - read.js
+              - carpeta: types
+                archivos:
+                  - json.js
+                  - raw.js
+                  - text.js
+                  - urlencoded.js
+          - carpeta: iconv-lite
+            archivos:
+              - Changelog.md
+              - LICENSE
+              - package.json
+              - README.md
+            - carpeta: encodings
+              archivos:
+                - dbcs-codec.js
+                - dbcs-data.js
+                - index.js
+                - internal.js
+                - sbcs-codec.js
+                - sbcs-data-generated.js
+                - sbcs-data.js
+                - utf16.js
+                - utf7.js
+              - carpeta: tables
+                archivos:
+                  - big5-added.json
+                  - cp936.json
+                  - cp949.json
+                  - cp950.json
+                  - eucjp.json
+                  - gb18030-ranges.json
+                  - gbk-added.json
+                  - shiftjis.json
+            - carpeta: lib
+              archivos:
+                - bom-handling.js
+                - extend-node.js
+                - index.d.ts
+                - index.js
+                - streams.js
+          - carpeta: raw-body
+            archivos:
+              - HISTORY.md
+              - index.d.ts
+              - index.js
+              - LICENSE
+              - package.json
+              - README.md
+              - SECURITY.md
+      - carpeta: finalhandler
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - SECURITY.md
+      - carpeta: forwarded
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: fresh
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: function-bind
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - implementation.js
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+            - SECURITY.md
+        - carpeta: test
+          archivos:
+            - .eslintrc
+            - index.js
+      - carpeta: get-intrinsic
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - GetIntrinsic.js
+      - carpeta: get-proto
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - Object.getPrototypeOf.d.ts
+          - Object.getPrototypeOf.js
+          - package.json
+          - README.md
+          - Reflect.getPrototypeOf.d.ts
+          - Reflect.getPrototypeOf.js
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: gopd
+        archivos:
+          - .eslintrc
+          - CHANGELOG.md
+          - gOPD.d.ts
+          - gOPD.js
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: has-symbols
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - shams.d.ts
+          - shams.js
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+            - tests.js
+          - carpeta: shams
+            archivos:
+              - core-js.js
+              - get-own-property-symbols.js
+      - carpeta: hasown
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+      - carpeta: http-errors
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: iconv-lite
+        archivos:
+          - Changelog.md
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: .github
+          archivos:
+            - dependabot.yml
+        - carpeta: .idea
+          archivos:
+            - iconv-lite.iml
+            - modules.xml
+            - vcs.xml
+          - carpeta: codeStyles
+            archivos:
+              - codeStyleConfig.xml
+              - Project.xml
+          - carpeta: inspectionProfiles
+            archivos:
+              - Project_Default.xml
+        - carpeta: encodings
+          archivos:
+            - dbcs-codec.js
+            - dbcs-data.js
+            - index.js
+            - internal.js
+            - sbcs-codec.js
+            - sbcs-data-generated.js
+            - sbcs-data.js
+            - utf16.js
+            - utf32.js
+            - utf7.js
+          - carpeta: tables
+            archivos:
+              - big5-added.json
+              - cp936.json
+              - cp949.json
+              - cp950.json
+              - eucjp.json
+              - gb18030-ranges.json
+              - gbk-added.json
+              - shiftjis.json
+        - carpeta: lib
+          archivos:
+            - bom-handling.js
+            - index.d.ts
+            - index.js
+            - streams.js
+      - carpeta: inherits
+        archivos:
+          - inherits.js
+          - inherits_browser.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: ipaddr.js
+        archivos:
+          - ipaddr.min.js
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: lib
+          archivos:
+            - ipaddr.js
+            - ipaddr.js.d.ts
+      - carpeta: jsonwebtoken
+        archivos:
+          - decode.js
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - sign.js
+          - verify.js
+        - carpeta: lib
+          archivos:
+            - asymmetricKeyDetailsSupported.js
+            - JsonWebTokenError.js
+            - NotBeforeError.js
+            - psSupported.js
+            - rsaPssKeyDetailsSupported.js
+            - timespan.js
+            - TokenExpiredError.js
+            - validateAsymmetricKey.js
+        - carpeta: node_modules
+          - carpeta: ms
+            archivos:
+              - index.js
+              - license.md
+              - package.json
+              - readme.md
+      - carpeta: jwa
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: jws
+        archivos:
+          - CHANGELOG.md
+          - index.js
+          - LICENSE
+          - package.json
+          - readme.md
+        - carpeta: lib
+          archivos:
+            - data-stream.js
+            - sign-stream.js
+            - tostring.js
+            - verify-stream.js
+      - carpeta: lodash.includes
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: lodash.isboolean
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: lodash.isinteger
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: lodash.isnumber
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: lodash.isplainobject
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: lodash.isstring
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: lodash.once
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: math-intrinsics
+        archivos:
+          - .eslintrc
+          - abs.d.ts
+          - abs.js
+          - CHANGELOG.md
+          - floor.d.ts
+          - floor.js
+          - isFinite.d.ts
+          - isFinite.js
+          - isInteger.d.ts
+          - isInteger.js
+          - isNaN.d.ts
+          - isNaN.js
+          - isNegativeZero.d.ts
+          - isNegativeZero.js
+          - LICENSE
+          - max.d.ts
+          - max.js
+          - min.d.ts
+          - min.js
+          - mod.d.ts
+          - mod.js
+          - package.json
+          - pow.d.ts
+          - pow.js
+          - README.md
+          - round.d.ts
+          - round.js
+          - sign.d.ts
+          - sign.js
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: constants
+          archivos:
+            - maxArrayLength.d.ts
+            - maxArrayLength.js
+            - maxSafeInteger.d.ts
+            - maxSafeInteger.js
+            - maxValue.d.ts
+            - maxValue.js
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: media-typer
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: merge-descriptors
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: methods
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: mime
+        archivos:
+          - .npmignore
+          - CHANGELOG.md
+          - cli.js
+          - LICENSE
+          - mime.js
+          - package.json
+          - README.md
+          - types.json
+        - carpeta: src
+          archivos:
+            - build.js
+            - test.js
+      - carpeta: mime-db
+        archivos:
+          - db.json
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: mime-types
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: ms
+        archivos:
+          - index.js
+          - license.md
+          - package.json
+          - readme.md
+      - carpeta: negotiator
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: lib
+          archivos:
+            - charset.js
+            - encoding.js
+            - language.js
+            - mediaType.js
+      - carpeta: node-addon-api
+        archivos:
+          - common.gypi
+          - except.gypi
+          - index.js
+          - LICENSE.md
+          - napi-inl.deprecated.h
+          - napi-inl.h
+          - napi.h
+          - node_addon_api.gyp
+          - node_api.gyp
+          - noexcept.gypi
+          - nothing.c
+          - package-support.json
+          - package.json
+          - README.md
+        - carpeta: tools
+          archivos:
+            - check-napi.js
+            - clang-format.js
+            - conversion.js
+            - README.md
+      - carpeta: node-gyp-build
+        archivos:
+          - bin.js
+          - build-test.js
+          - index.js
+          - LICENSE
+          - node-gyp-build.js
+          - optional.js
+          - package.json
+          - README.md
+          - SECURITY.md
+      - carpeta: object-assign
+        archivos:
+          - index.js
+          - license
+          - package.json
+          - readme.md
+      - carpeta: object-inspect
+        archivos:
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.js
+          - LICENSE
+          - package-support.json
+          - package.json
+          - readme.markdown
+          - test-core-js.js
+          - util.inspect.js
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: example
+          archivos:
+            - all.js
+            - circular.js
+            - fn.js
+            - inspect.js
+        - carpeta: test
+          archivos:
+            - bigint.js
+            - circular.js
+            - deep.js
+            - element.js
+            - err.js
+            - fakes.js
+            - fn.js
+            - global.js
+            - has.js
+            - holes.js
+            - indent-option.js
+            - inspect.js
+            - lowbyte.js
+            - number.js
+            - quoteStyle.js
+            - toStringTag.js
+            - undef.js
+            - values.js
+          - carpeta: browser
+            archivos:
+              - dom.js
+      - carpeta: on-finished
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: parseurl
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: path-to-regexp
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - Readme.md
+      - carpeta: pg
+        archivos:
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: esm
+          archivos:
+            - index.mjs
+        - carpeta: lib
+          archivos:
+            - client.js
+            - connection-parameters.js
+            - connection.js
+            - defaults.js
+            - index.js
+            - query.js
+            - result.js
+            - stream.js
+            - type-overrides.js
+            - utils.js
+          - carpeta: crypto
+            archivos:
+              - cert-signatures.js
+              - sasl.js
+              - utils-legacy.js
+              - utils-webcrypto.js
+              - utils.js
+          - carpeta: native
+            archivos:
+              - client.js
+              - index.js
+              - query.js
+      - carpeta: pg-cloudflare
+        archivos:
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: dist
+          archivos:
+            - empty.d.ts
+            - empty.js
+            - empty.js.map
+            - index.d.ts
+            - index.js
+            - index.js.map
+        - carpeta: esm
+          archivos:
+            - index.mjs
+        - carpeta: src
+          archivos:
+            - empty.ts
+            - index.ts
+            - types.d.ts
+      - carpeta: pg-connection-string
+        archivos:
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: esm
+          archivos:
+            - index.mjs
+      - carpeta: pg-int8
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: pg-pool
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: esm
+          archivos:
+            - index.mjs
+      - carpeta: pg-protocol
+        archivos:
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: dist
+          archivos:
+            - b.d.ts
+            - b.js
+            - b.js.map
+            - buffer-reader.d.ts
+            - buffer-reader.js
+            - buffer-reader.js.map
+            - buffer-writer.d.ts
+            - buffer-writer.js
+            - buffer-writer.js.map
+            - inbound-parser.test.d.ts
+            - inbound-parser.test.js
+            - inbound-parser.test.js.map
+            - index.d.ts
+            - index.js
+            - index.js.map
+            - messages.d.ts
+            - messages.js
+            - messages.js.map
+            - outbound-serializer.test.d.ts
+            - outbound-serializer.test.js
+            - outbound-serializer.test.js.map
+            - parser.d.ts
+            - parser.js
+            - parser.js.map
+            - serializer.d.ts
+            - serializer.js
+            - serializer.js.map
+        - carpeta: esm
+          archivos:
+            - index.js
+        - carpeta: src
+          archivos:
+            - b.ts
+            - buffer-reader.ts
+            - buffer-writer.ts
+            - inbound-parser.test.ts
+            - index.ts
+            - messages.ts
+            - outbound-serializer.test.ts
+            - parser.ts
+            - serializer.ts
+          - carpeta: testing
+            archivos:
+              - buffer-list.ts
+              - test-buffers.ts
+          - carpeta: types
+            archivos:
+              - chunky.d.ts
+      - carpeta: pg-types
+        archivos:
+          - .travis.yml
+          - index.d.ts
+          - index.js
+          - index.test-d.ts
+          - Makefile
+          - package.json
+          - README.md
+        - carpeta: lib
+          archivos:
+            - arrayParser.js
+            - binaryParsers.js
+            - builtins.js
+            - textParsers.js
+        - carpeta: test
+          archivos:
+            - index.js
+            - types.js
+      - carpeta: pgpass
+        archivos:
+          - package.json
+          - README.md
+        - carpeta: lib
+          archivos:
+            - helper.js
+            - index.js
+      - carpeta: postgres-array
+        archivos:
+          - index.d.ts
+          - index.js
+          - license
+          - package.json
+          - readme.md
+      - carpeta: postgres-bytea
+        archivos:
+          - index.js
+          - license
+          - package.json
+          - readme.md
+      - carpeta: postgres-date
+        archivos:
+          - index.js
+          - license
+          - package.json
+          - readme.md
+      - carpeta: postgres-interval
+        archivos:
+          - index.d.ts
+          - index.js
+          - license
+          - package.json
+          - readme.md
+      - carpeta: proxy-addr
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: qs
+        archivos:
+          - .editorconfig
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - LICENSE.md
+          - package.json
+          - README.md
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: dist
+          archivos:
+            - qs.js
+        - carpeta: lib
+          archivos:
+            - formats.js
+            - index.js
+            - parse.js
+            - stringify.js
+            - utils.js
+        - carpeta: test
+          archivos:
+            - empty-keys-cases.js
+            - parse.js
+            - stringify.js
+            - utils.js
+      - carpeta: range-parser
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: raw-body
+        archivos:
+          - HISTORY.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - SECURITY.md
+        - carpeta: node_modules
+          - carpeta: iconv-lite
+            archivos:
+              - Changelog.md
+              - LICENSE
+              - package.json
+              - README.md
+            - carpeta: encodings
+              archivos:
+                - dbcs-codec.js
+                - dbcs-data.js
+                - index.js
+                - internal.js
+                - sbcs-codec.js
+                - sbcs-data-generated.js
+                - sbcs-data.js
+                - utf16.js
+                - utf32.js
+                - utf7.js
+              - carpeta: tables
+                archivos:
+                  - big5-added.json
+                  - cp936.json
+                  - cp949.json
+                  - cp950.json
+                  - eucjp.json
+                  - gb18030-ranges.json
+                  - gbk-added.json
+                  - shiftjis.json
+            - carpeta: lib
+              archivos:
+                - bom-handling.js
+                - index.d.ts
+                - index.js
+                - streams.js
+              - carpeta: helpers
+                archivos:
+                  - merge-exports.js
+      - carpeta: safe-buffer
+        archivos:
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: safer-buffer
+        archivos:
+          - dangerous.js
+          - LICENSE
+          - package.json
+          - Porting-Buffer.md
+          - Readme.md
+          - safer.js
+          - tests.js
+      - carpeta: semver
+        archivos:
+          - index.js
+          - LICENSE
+          - package.json
+          - preload.js
+          - range.bnf
+          - README.md
+        - carpeta: bin
+          archivos:
+            - semver.js
+        - carpeta: classes
+          archivos:
+            - comparator.js
+            - index.js
+            - range.js
+            - semver.js
+        - carpeta: functions
+          archivos:
+            - clean.js
+            - cmp.js
+            - coerce.js
+            - compare-build.js
+            - compare-loose.js
+            - compare.js
+            - diff.js
+            - eq.js
+            - gt.js
+            - gte.js
+            - inc.js
+            - lt.js
+            - lte.js
+            - major.js
+            - minor.js
+            - neq.js
+            - parse.js
+            - patch.js
+            - prerelease.js
+            - rcompare.js
+            - rsort.js
+            - satisfies.js
+            - sort.js
+            - valid.js
+        - carpeta: internal
+          archivos:
+            - constants.js
+            - debug.js
+            - identifiers.js
+            - lrucache.js
+            - parse-options.js
+            - re.js
+        - carpeta: ranges
+          archivos:
+            - gtr.js
+            - intersects.js
+            - ltr.js
+            - max-satisfying.js
+            - min-satisfying.js
+            - min-version.js
+            - outside.js
+            - simplify.js
+            - subset.js
+            - to-comparators.js
+            - valid.js
+      - carpeta: send
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - SECURITY.md
+        - carpeta: node_modules
+          - carpeta: encodeurl
+            archivos:
+              - HISTORY.md
+              - index.js
+              - LICENSE
+              - package.json
+              - README.md
+          - carpeta: ms
+            archivos:
+              - index.js
+              - license.md
+              - package.json
+              - readme.md
+      - carpeta: serve-static
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: setprototypeof
+        archivos:
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: side-channel
+        archivos:
+          - .editorconfig
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: side-channel-list
+        archivos:
+          - .editorconfig
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - list.d.ts
+          - package.json
+          - README.md
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: side-channel-map
+        archivos:
+          - .editorconfig
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: side-channel-weakmap
+        archivos:
+          - .editorconfig
+          - .eslintrc
+          - .nycrc
+          - CHANGELOG.md
+          - index.d.ts
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - tsconfig.json
+        - carpeta: .github
+          archivos:
+            - FUNDING.yml
+        - carpeta: test
+          archivos:
+            - index.js
+      - carpeta: split2
+        archivos:
+          - bench.js
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - test.js
+      - carpeta: statuses
+        archivos:
+          - codes.json
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: toidentifier
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: type-is
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: unpipe
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: utils-merge
+        archivos:
+          - .npmignore
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: vary
+        archivos:
+          - HISTORY.md
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+      - carpeta: ws
+        archivos:
+          - browser.js
+          - index.js
+          - LICENSE
+          - package.json
+          - README.md
+          - wrapper.mjs
+        - carpeta: lib
+          archivos:
+            - buffer-util.js
+            - constants.js
+            - event-target.js
+            - extension.js
+            - limiter.js
+            - permessage-deflate.js
+            - receiver.js
+            - sender.js
+            - stream.js
+            - subprotocol.js
+            - validation.js
+            - websocket-server.js
+            - websocket.js
+      - carpeta: xtend
+        archivos:
+          - .jshintrc
+          - immutable.js
+          - LICENSE
+          - mutable.js
+          - package.json
+          - README.md
+          - test.js
+# ============================================================
+# NOTAS DE USO
+# ============================================================
+# - Este archivo es para uso de ChatGPT u otra IA.
+# - Copia su contenido completo en el chat para contextualizar.
+# - Si agregas nuevos módulos o pantallas, ejecuta este script nuevamente.
+# ============================================================
