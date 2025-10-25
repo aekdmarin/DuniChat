@@ -1,34 +1,41 @@
 ﻿import pkg from "pg";
 const { Pool } = pkg;
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
+const connectionString =
+  process.env.DATABASE_URL ||
+  "postgresql://duniuser:2CDlvXngU9tFou9DIO7RO7BAPd4nsdFW@dpg-d3t4lqe3jp1c738h21o0-a/dunichatdb";
+
+export const pool = new Pool({
+  connectionString,
+  ssl: process.env.PGSSLMODE === "disable" ? false : { rejectUnauthorized: false },
 });
 
 export async function init() {
-  // Tabla de usuarios
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS users (
-      id SERIAL PRIMARY KEY,
-      username TEXT UNIQUE NOT NULL,
-      password_hash TEXT NOT NULL,
-      created_at TIMESTAMP DEFAULT NOW()
-    );
-  `);
+  try {
+    console.log("📡 Conectando a PostgreSQL...");
+    const client = await pool.connect();
 
-  // Tabla de mensajes
-  await pool.query(`
-    CREATE TABLE IF NOT EXISTS messages (
-      id SERIAL PRIMARY KEY,
-      room TEXT,
-      username TEXT,
-      text TEXT,
-      ts BIGINT
-    );
-  `);
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        username TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL
+      );
+    `);
 
-  console.log("✅ Tablas 'users' y 'messages' listas.");
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS messages (
+        id SERIAL PRIMARY KEY,
+        username TEXT NOT NULL,
+        message TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT NOW()
+      );
+    `);
+
+    client.release();
+    console.log("✅ Tablas 'users' y 'messages' listas.");
+  } catch (err) {
+    console.error("❌ Error inicializando la base de datos:", err);
+    throw err;
+  }
 }
-
-export { pool };
