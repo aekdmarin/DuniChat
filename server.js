@@ -5,12 +5,14 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { init, pool } from "./db.js";
 import { WebSocketServer } from "ws";
+import http from "http";
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
 const JWT_SECRET = process.env.JWT_SECRET || "dunichat_secret";
+const PORT = process.env.PORT || 3000;
 
 // Inicializar base de datos
 await init();
@@ -83,9 +85,11 @@ app.post("/login", async (req, res) => {
 });
 
 // ------------------------
-// 🔹 Servidor WebSocket
+// 🔹 Servidor HTTP + WebSocket (Render-compatible)
 // ------------------------
-const wss = new WebSocketServer({ port: 10000 });
+const server = http.createServer(app);
+const wss = new WebSocketServer({ server });
+
 wss.on("connection", (ws) => {
   console.log("🟢 Nueva conexión WebSocket");
   ws.on("message", (msg) => {
@@ -93,8 +97,6 @@ wss.on("connection", (ws) => {
   });
 });
 
-// ------------------------
-// 🔹 Servidor HTTP
-// ------------------------
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🚀 API corriendo en puerto ${PORT}`));
+server.listen(PORT, () => {
+  console.log(`🚀 Servidor HTTP+WS corriendo en puerto ${PORT}`);
+});
