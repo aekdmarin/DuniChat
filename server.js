@@ -12,32 +12,39 @@ app.use(bodyParser.json());
 
 const JWT_SECRET = process.env.JWT_SECRET || "dunichat_secret";
 
-// Inicializa la base de datos
+// Inicializar base de datos
 await init();
 
 // ------------------------
-// 🔹 Registro de usuario
+// 🔹 Registro de usuario (corregido)
 // ------------------------
 app.post("/signup", async (req, res) => {
   try {
     const { username, password } = req.body;
-    if (!username || !password)
+    if (!username || !password) {
       return res.status(400).json({ error: "Faltan datos" });
+    }
 
     const hash = await bcrypt.hash(password, 10);
-    await pool.query(
-      "INSERT INTO users (username, password_hash) VALUES ($1, $2)",
-      [username, hash]
-    );
+    const queryText = `
+      INSERT INTO users (username, password_hash)
+      VALUES ($1, $2)
+      ON CONFLICT (username) DO NOTHING
+      RETURNING username;
+    `;
+
+    const result = await pool.query(queryText, [username, hash]);
+
+    if (result.rows.length === 0) {
+      console.log(`⚠️ Usuario existente: ${username}`);
+      return res.status(400).json({ error: "Usuario ya existe" });
+    }
 
     console.log(`✅ Usuario registrado: ${username}`);
     res.status(200).json({ message: "Usuario registrado correctamente" });
   } catch (err) {
     console.error("❌ Error en /signup:", err);
-    if (err.code === "23505")
-      res.status(400).json({ error: "Usuario ya existe" });
-    else
-      res.status(500).json({ error: "Error creando usuario" });
+    res.status(500).json({ error: "Error interno en registro" });
   }
 });
 
@@ -47,21 +54,24 @@ app.post("/signup", async (req, res) => {
 app.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
-    if (!username || !password)
+    if (!username || !password) {
       return res.status(400).json({ error: "Faltan datos" });
+    }
 
     const result = await pool.query(
       "SELECT * FROM users WHERE username = $1",
       [username]
     );
 
-    if (result.rows.length === 0)
+    if (result.rows.length === 0) {
       return res.status(401).json({ error: "Usuario no existe" });
+    }
 
     const user = result.rows[0];
     const valid = await bcrypt.compare(password, user.password_hash);
-    if (!valid)
+    if (!valid) {
       return res.status(401).json({ error: "Contraseña incorrecta" });
+    }
 
     const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: "24h" });
     console.log(`✅ Login exitoso: ${username}`);
